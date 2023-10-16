@@ -5,4 +5,12 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Carrot Games Logo.png" />
+    <None Remove="Huisstijl Klanten WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Carrot Games Logo.png" />
+    <Resource Include="Huisstijl Klanten WPF.png" />
+  </ItemGroup>
 </Project>
