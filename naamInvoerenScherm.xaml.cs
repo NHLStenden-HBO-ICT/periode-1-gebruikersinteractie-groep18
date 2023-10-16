@@ -22,16 +22,17 @@ namespace MemoryGame
         public naamInvoerenScherm()
         {
             InitializeComponent();
+            string speler1 = invoerSpeler1.Text;
+            string speler2 = invoerSpeler2.Text;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-
         }
     }
 }
