@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace MemoryGame {
 	public partial class MainWindow : Window {
 		public MainWindow() {
 			InitializeComponent();
+			MemoryBoard.generate(4, 4);
 		}
 	}
 }
