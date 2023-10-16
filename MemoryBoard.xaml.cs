@@ -25,7 +25,7 @@ namespace MemoryGame {
             InitializeComponent();
         }
         public static List<List<int>> cards = new List<List<int>>();
-        public static void generate(int w, int h) {
+        public static bool generate(int w, int h) {
             int cardnum = w * h;
             if(cardnum % 2 == 0) { 
                 //hoeveelheid kaarten is een even getal
@@ -36,20 +36,29 @@ namespace MemoryGame {
                     sortedcards.Add(i);
                 }
                 Random rnd = new Random();
+                Trace.WriteLine("memory layout:");
                 for (int i = 0; i < h; i++) {
+                    //genereer een tijdelijke lijst om toe te kunnen voegen aan de cards lijst
                     List<int> templist = new List<int>();
                     for(int j = 0; j < w; j++) {
-                        int rand = rnd.Next(0, sortedcards.Count() - 1);
+                        //genereer een willekeurig nummer
+                        int rand = rnd.Next(0, sortedcards.Count());
+                        //voeg de id uit de lijst toe aan de tijdelijke lijst en verwijder heb uit de gesorteerde lijst
                         templist.Add(sortedcards[rand]);
                         sortedcards.RemoveAt(rand);
                     }
+                    //voeg de tijdelijke lijst toe aan de cards lijst
+                    templist.ForEach(k => Trace.Write(k + "\t"));
+                    Trace.Write("\n");
                     cards.Add(templist);
                 }
                 
             }
             else {
                 Trace.WriteLine("de ingevoegde grootte levert een oneven aantal kaarten.");
+                return false;
             }
+            return true;
         }
     }
 }

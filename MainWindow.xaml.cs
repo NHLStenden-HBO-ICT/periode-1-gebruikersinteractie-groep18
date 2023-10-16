@@ -21,7 +21,7 @@ namespace MemoryGame {
 	public partial class MainWindow : Window {
 		public MainWindow() {
 			InitializeComponent();
-			MemoryBoard.generate(4, 4);
+			MemoryBoard.generate(3, 5);
 		}
 	}
 }
