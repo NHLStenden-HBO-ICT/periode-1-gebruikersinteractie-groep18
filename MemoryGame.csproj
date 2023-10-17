@@ -11,6 +11,5 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Carrot Games Logo.png" />
-    <Resource Include="Huisstijl Klanten WPF.png" />
   </ItemGroup>
 </Project>
