@@ -6,10 +6,13 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="BreeSerif.ttf" />
     <None Remove="Carrot Games Logo.png" />
-    <None Remove="Huisstijl Klanten WPF.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BreeSerif.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Carrot Games Logo.png" />
   </ItemGroup>
 </Project>
