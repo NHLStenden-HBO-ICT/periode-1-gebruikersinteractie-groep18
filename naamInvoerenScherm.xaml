@@ -10,12 +10,14 @@
         <Grid Height="450" Width="800">
             <Grid Height="NaN" Width="NaN" Background="#FFFFF8F5">
                 <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5" CornerRadius="15,15,15,15" Grid.Column="1"/>
-                <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5"/>
+                <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5">
+                    <TextBlock x:Name="weergevenSpeler2" FontFamily="./Bree Serif" TextWrapping="Wrap" Text="speler 2" Margin="707,14,27,406"/>
+                </Border>
                 <Rectangle HorizontalAlignment="Left" Height="100" Margin="125,139,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FFFF6666" RadiusX="25" RadiusY="25"/>
                 <TextBlock FontFamily="./Bree Serif" FontSize="36"  HorizontalAlignment="Left" Margin="188,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="nl-nl" Text="speler 1"/><LineBreak/><Run Language="nl-nl"/></TextBlock>
                 <Label Content="MEMORY" Margin="0,45,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="Bree Serif" FontSize="72" FontWeight="Bold" Width="330" Height="96"/>
                 <TextBox x:Name="invoerSpeler1" HorizontalAlignment="Left" Margin="200,189,0,0" TextWrapping="Wrap" Text="Voornaam" VerticalAlignment="Top" Width="100" TextChanged="TextBox_TextChanged_1" Background="#FFD9D9D9" Height="24"/>
-                <Rectangle Height="100" Margin="426,139,124,0" Stroke="Black" VerticalAlignment="Top" Fill="#FFFF6666" RadiusX="25" RadiusY="25" Width="250"/>
+                <Rectangle Height="100" Margin="426,139,124,0" Stroke="Black" VerticalAlignment="Top" Fill="#FFBC37" RadiusX="25" RadiusY="25" Width="250"/>
                 <TextBlock FontFamily="./Bree Serif" FontSize="36" Margin="480,146,124,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="speler "/><Run Language="nl-nl" Text="2"/><LineBreak/><Run/></TextBlock>
                 <TextBox x:Name="invoerSpeler2" Margin="497,191,203,0" TextWrapping="Wrap" Text="Voornaam" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1" Background="#FFD9D9D9" RenderTransformOrigin="0.406,2.29" Width="100" Height="24">
                     <TextBox.RenderTransform>
@@ -27,8 +29,9 @@
                         </TransformGroup>
                     </TextBox.RenderTransform>
                 </TextBox>
-                <Button x:Name="enterSpeler1" Content="ENTER" HorizontalAlignment="Left" Margin="200,217,0,0" VerticalAlignment="Top" Click="Button_Click" Width="100"/>
-                <Button x:Name="enterSpeler2" Content="ENTER" HorizontalAlignment="Left" Margin="497,217,0,0" VerticalAlignment="Top" Click="Button_Click" Width="100"/>
+                <Button x:Name="enterSpeler1" Content="ENTER" HorizontalAlignment="Left" Margin="200,217,0,0" VerticalAlignment="Top" Click="Button_Click1" Width="100"/>
+                <Button x:Name="enterSpeler2" Content="ENTER" HorizontalAlignment="Left" Margin="497,217,0,0" VerticalAlignment="Top" Click="Button_Click2" Width="100"/>
+                <TextBlock x:Name="weergevenSpeler1" FontFamily="./Bree Serif" TextWrapping="Wrap" Text="speler 1" Margin="21,19,723,411"/>
             </Grid>
         </Grid>
     </Viewbox>
