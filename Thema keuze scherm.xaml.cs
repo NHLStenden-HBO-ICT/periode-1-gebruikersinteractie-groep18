@@ -18,16 +18,16 @@ namespace MemoryGame
     /// <summary>
     /// Het bordgrootte scherm
     /// </summary>
-    public partial class BoardSelectionScreen : Window
+    public partial class ThemaSelectionScreen : Window
     {
         // De knop die nu is uitgezet
         Button currentButton;
 
         // Zorgt ervoor dat 4 x 4 de eerste geselecteerde optie is
-        public BoardSelectionScreen()
+        public ThemaSelectionScreen()
         {
             InitializeComponent();
-            currentButton = FourFourButton;
+            currentButton = LandenButton;
             GeneratePreview(SplitTags(currentButton));
         }
 
