@@ -108,8 +108,6 @@ namespace MemoryGame
                 }
             }
 
-            // Vervangt de preview tekst
-            previewSize.Text = currentButton.Content.ToString();
             // Verwijdert het oude grid
             previewRow.Children.RemoveAt(2);
             // Voegt het nieuwe grid toe
