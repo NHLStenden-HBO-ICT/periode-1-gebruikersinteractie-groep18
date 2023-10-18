@@ -28,12 +28,12 @@ namespace MemoryGame
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string speler1 = invoerSpeler1.Text;
+            
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            string speler2 = invoerSpeler2.Text;
+            
         }
 
         
