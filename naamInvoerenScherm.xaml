@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="naamInvoerenScherm" Height="450" Width="800">
     <Grid HorizontalAlignment="Stretch" Height="NaN" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="NaN" Background="#FFD9D9D9">
+        <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5" CornerRadius="15,15,15,15" Grid.Column="1"/>
+        <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5"/>
         <Rectangle HorizontalAlignment="Left" Height="62" Margin="205,184,0,0" Stroke="Black" VerticalAlignment="Top" Width="152" Fill="#FFFF6666" RadiusX="25" RadiusY="25"/>
         <TextBlock HorizontalAlignment="Left" Margin="260,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="nl-nl" Text="speler 1"/><LineBreak/><Run Language="nl-nl"/></TextBlock>
         <TextBlock x:Name="Titel" HorizontalAlignment="Center" Margin="0,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.083,1.199"  FontSize="50"><Run Language="nl-nl" Text="Memory"/></TextBlock>
