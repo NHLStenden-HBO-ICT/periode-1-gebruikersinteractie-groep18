@@ -1,0 +1,119 @@
+﻿<Window x:Class="MemoryGame.BoardSelectionScreen"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:MemoryGame"
+	mc:Ignorable="d"
+	WindowState="Maximized"
+	WindowStyle="None"
+	Background="#FFF8F5"
+	Title="BoardSelectionScreen" Width="1920" Height="1080">
+	<Window.Resources>
+		<Style x:Key="FocusVisual">
+			<Setter Property="Control.Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+		<SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+		<SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+		<SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+		<SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+		<SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+		<SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+		<SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+		<SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#2B2B2B"/>
+		<Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+			<Setter Property="Background" Value="#FF6666"/>
+			<Setter Property="BorderBrush" Value="#2B2B2B"/>
+			<Setter Property="Foreground" Value="#2B2B2B"/>
+			<Setter Property="BorderThickness" Value="8"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Padding" Value="1"/>
+			<Setter Property="Focusable" Value="False"/>
+			<Setter Property="FontFamily" Value="./#Bree Serif"/>
+			<Setter Property="FontSize" Value="64"/>
+			<Setter Property="Width" Value="500"/>
+			<Setter Property="Height" Value="125"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Border x:Name="border" CornerRadius="24" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+							<ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsDefaulted" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="Background" TargetName="border" Value="#FF7777"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="#2B2B2B"/>
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter Property="Background" TargetName="border" Value="#FF5555"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="#2B2B2B"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Background" TargetName="border" Value="#FF9999"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="#2B2B2B"/>
+								<Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
+			<Setter Property="TextWrapping" Value="NoWrap"/>
+			<Setter Property="TextTrimming" Value="None"/>
+			<Setter Property="FontSize" Value="128"/>
+			<Setter Property="Foreground" Value="#2B2B2B"/>
+			<Setter Property="FontFamily" Value="./#Bree Serif"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+		</Style>
+	</Window.Resources>
+	<Grid>
+		<Grid>
+			<!--Hoeveel kolommen er zijn-->
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid Margin="0 50 0 150" Grid.Column="0">
+				<!--Hoeveel ruimte elke kolom krijgt-->
+				<Grid.RowDefinitions>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<TextBlock Style="{DynamicResource TextBlockStyle}" Grid.Row="0">Memory</TextBlock>
+				<!--Knopjes-->
+				<Button Style="{DynamicResource RoundedButtonStyle}" Name="FourFourButton" Grid.Row="1" Content="4 x 4" Tag="4 4" Click="PreviewButtonClick"/>
+				<Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="2" Content="5 x 4" Tag="5 4" Click="PreviewButtonClick"/>
+				<Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="3" Content="6 x 5" Tag="6 5" Click="PreviewButtonClick"/>
+			</Grid>
+			<Border Background="#888888" Margin="-4 0 0 0" BorderBrush="#2B2B2B" BorderThickness="8 0 0 0" Grid.Column="1"/>
+			<Grid Name="previewRow" Grid.Column="1">
+				<!--Hoeveel ruimte elke rij krijgt-->
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="4*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<TextBlock Style="{DynamicResource TextBlockStyle}" Name="previewSize" FontSize="96" Grid.Row="0">4 x 4</TextBlock>
+				<Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="2" Content="Verder" Click="NextButtonClick"/>
+				<!--Preview Grid-->
+				<Grid/>
+			</Grid>
+		</Grid>
+	</Grid>
+</Window>
