@@ -28,20 +28,23 @@ namespace MemoryGame
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string speler1 = invoerSpeler1.Text;
+            
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            string speler2 = invoerSpeler2.Text;
+            
         }
-
-        
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click1(object sender, RoutedEventArgs e)
         {
             string speler1 = invoerSpeler1.Text;
+            weergevenSpeler1.Text = invoerSpeler1.Text;
+        }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
             string speler2 = invoerSpeler2.Text;
-            MessageBox.Show("dit is ingevoerd " + speler1 + " " + speler2);
+            weergevenSpeler2.Text = invoerSpeler2.Text;
         }
     }
 }
