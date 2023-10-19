@@ -6,20 +6,78 @@
         xmlns:local="clr-namespace:MemoryGame"
         mc:Ignorable="d"
         Title="naamInvoerenScherm" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="LogoStyle" TargetType="{x:Type Image}"/>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Rounded" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#ff8c8c"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#2b2b2b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#FF6666"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#2b2b2b"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Viewbox VerticalAlignment="Center" Stretch="Fill">
         <Grid Height="450" Width="800">
             <Grid Height="NaN" Width="NaN" Background="#FFFFF8F5">
                 <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5" CornerRadius="15,15,15,15" Grid.Column="1"/>
-                <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5">
-                    <TextBlock x:Name="weergevenSpeler2" FontFamily="./Bree Serif" TextWrapping="Wrap" Text="speler 2" Margin="707,14,27,406"/>
-                </Border>
-                <Rectangle HorizontalAlignment="Left" Height="100" Margin="125,139,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FFFF6666" RadiusX="25" RadiusY="25"/>
-                <TextBlock FontFamily="./Bree Serif" FontSize="36"  HorizontalAlignment="Left" Margin="188,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="nl-nl" Text="speler 1"/><LineBreak/><Run Language="nl-nl"/></TextBlock>
+                <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5"/>
+                <Button Style="{DynamicResource Rounded}" Content="volgende" Margin="536,327,67,61" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_ClickVolgendScherm" FontFamily="Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold"/>
+                <Image Margin="300,264,300,8" Source="/Carrot Games Logo.png" Width="200" Height="160"/>
+                <Rectangle HorizontalAlignment="Left" Height="100" Margin="125,139,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FFFF6666" RadiusX="25" RadiusY="25" StrokeThickness="4"/>
+                <TextBlock x:Name="weergevenSpeler1" FontFamily="./Bree Serif" FontSize="36"  HorizontalAlignment="Left" Margin="188,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"><Run Language="nl-nl" Text="speler 1"/><LineBreak/><Run Language="nl-nl"/></TextBlock>
                 <Label Content="MEMORY" Margin="0,45,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="Bree Serif" FontSize="72" FontWeight="Bold" Width="330" Height="96"/>
-                <TextBox x:Name="invoerSpeler1" HorizontalAlignment="Left" Margin="200,189,0,0" TextWrapping="Wrap" Text="Voornaam" VerticalAlignment="Top" Width="100" TextChanged="TextBox_TextChanged_1" Background="#FFD9D9D9" Height="24"/>
-                <Rectangle Height="100" Margin="426,139,124,0" Stroke="Black" VerticalAlignment="Top" Fill="#FFBC37" RadiusX="25" RadiusY="25" Width="250"/>
-                <TextBlock FontFamily="./Bree Serif" FontSize="36" Margin="480,146,124,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="speler "/><Run Language="nl-nl" Text="2"/><LineBreak/><Run/></TextBlock>
-                <TextBox x:Name="invoerSpeler2" Margin="497,191,203,0" TextWrapping="Wrap" Text="Voornaam" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1" Background="#FFD9D9D9" RenderTransformOrigin="0.406,2.29" Width="100" Height="24">
+                <TextBox x:Name="invoerSpeler1" HorizontalAlignment="Left" Margin="200,182,0,0" TextWrapping="Wrap" Text="Voornaam" VerticalAlignment="Top" Width="100" TextChanged="TextBox_TextChanged_1" Background="#FFFFF8F5" Height="24" FontFamily="Bree Serif"/>
+                <Rectangle Height="100" Margin="426,139,124,0" Stroke="Black" VerticalAlignment="Top" Fill="#FFBC37" RadiusX="25" RadiusY="25" Width="250" StrokeThickness="4"/>
+                <TextBlock x:Name="weergevenSpeler2" FontFamily="./Bree Serif" FontSize="36" Margin="480,139,124,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"><Run Text="speler "/><Run Language="nl-nl" Text="2"/><LineBreak/><Run/></TextBlock>
+                <TextBox x:Name="invoerSpeler2" Margin="497,182,203,0" TextWrapping="Wrap" Text="Voornaam" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1" Background="#FFFFF8F5" RenderTransformOrigin="0.406,2.29" Width="100" Height="24" FontFamily="Bree Serif">
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -29,9 +87,8 @@
                         </TransformGroup>
                     </TextBox.RenderTransform>
                 </TextBox>
-                <Button x:Name="enterSpeler1" Content="ENTER" HorizontalAlignment="Left" Margin="200,217,0,0" VerticalAlignment="Top" Click="Button_Click1" Width="100"/>
-                <Button x:Name="enterSpeler2" Content="ENTER" HorizontalAlignment="Left" Margin="497,217,0,0" VerticalAlignment="Top" Click="Button_Click2" Width="100"/>
-                <TextBlock x:Name="weergevenSpeler1" FontFamily="./Bree Serif" TextWrapping="Wrap" Text="speler 1" Margin="21,19,723,411"/>
+                <Button x:Name="enterSpeler1" Content="ENTER" HorizontalAlignment="Left" Margin="200,211,0,0" VerticalAlignment="Top" Click="Button_ClickSpeler1" Width="100" Background="#FFFFF8F5" FontFamily="Bree Serif" />
+                <Button x:Name="enterSpeler2" Content="ENTER" HorizontalAlignment="Left" Margin="497,210,0,0" VerticalAlignment="Top" Click="Button_ClickSpeler2" Width="100" Background="#FFFFF8F5" FontFamily="Bree Serif" />
             </Grid>
         </Grid>
     </Viewbox>
