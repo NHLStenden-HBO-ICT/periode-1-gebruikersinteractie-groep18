@@ -22,11 +22,18 @@ namespace MemoryGame
         public Titelscherm()
         {
             InitializeComponent();
+
+        }
+        private void Start_Click(object sender, RoutedEventArgs e)
+        {
+            naamInvoerenScherm naamInvoerenScherm = new naamInvoerenScherm();
+            naamInvoerenScherm.Show(); 
+            this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Sluiten_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

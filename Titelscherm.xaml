@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MemoryGame"
         mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStyle="None"
         Title="Titelscherm" Height="450" Width="800">
     <Window.Resources>
         <Style x:Key="LogoStyle" TargetType="{x:Type Image}"/>
@@ -46,7 +48,7 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#ff8c8c"/>
+                                <Setter Property="Background" TargetName="border" Value="#FF3477"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="#2b2b2b"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
@@ -73,9 +75,9 @@
                 <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5" CornerRadius="15,15,15,15" Grid.Column="1"/>
                 <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5"/>
                 <Image Margin="300,264,300,8" Source="/Carrot Games Logo.png" Width="200" Height="160"/>
-                <Label Content="MEMORY" Margin="0,45,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="Bree Serif" FontSize="72" FontWeight="Bold" Width="330" Height="96"/>
-                <Button Style="{DynamicResource Rounded}" Content="Start" Margin="-330,-10,0,0" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_Click" FontFamily="Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" Width="250" Height="100"/>
-                <Button Content="Sluiten" Margin="330,-10,0,0" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_Click" FontFamily="Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" SnapsToDevicePixels="True" FontWeight="Bold" Style="{DynamicResource Rounded}" Width="250" Height="100"/>
+                    <Label Content="MEMORY" Margin="0,45,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="./Bree Serif" FontSize="72" FontWeight="Bold" Width="330" Height="96"/>
+                    <Button Style="{DynamicResource Rounded}" Content="Start" Margin="-330,-10,0,0" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Start_Click" FontFamily="./Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" Width="250" Height="100"/>
+                    <Button Content="Sluiten" Margin="330,-10,0,0" BorderThickness="4,4,4,4" Background="#FFFF6666" FontFamily="./Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" SnapsToDevicePixels="True" FontWeight="Bold" Style="{DynamicResource Rounded}" Width="250" Height="100" Click="Sluiten_Click"/>
             </Grid>
         </Grid>
     </Grid>
