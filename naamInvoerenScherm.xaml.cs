@@ -51,6 +51,7 @@ namespace MemoryGame
         {
             Window BoardSelectionScreen = new BoardSelectionScreen();
             BoardSelectionScreen.Show();
+            this.Close();
         }
     }
 }
