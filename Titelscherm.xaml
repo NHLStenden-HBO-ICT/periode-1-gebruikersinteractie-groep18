@@ -65,21 +65,136 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual1">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border1" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FFBC37"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
+        <Style x:Key="Geluid" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="50,50,50,50" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="True" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#FFBC37"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#2b2b2b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#FFFF6666"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#2b2b2b"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Viewbox VerticalAlignment="Center" Stretch="Fill">
         <Grid Height="450" Width="800">
-        <Grid>
             <Grid>
-                <Rectangle Fill="#FFFFF8F5" IsHitTestVisible="False" Grid.Column="1" Grid.Row="1"/>
-                <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5" CornerRadius="15,15,15,15" Grid.Column="1"/>
-                <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5"/>
-                <Image Margin="300,264,300,8" Source="/Carrot Games Logo.png" Width="200" Height="160"/>
+                <Grid>
+                    <Rectangle Fill="#FFFFF8F5" IsHitTestVisible="False" Grid.Column="1" Grid.Row="1"/>
+                    <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5" CornerRadius="15,15,15,15" Grid.Column="1"/>
+                    <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5"/>
+                    <Image Margin="300,264,300,8" Source="/Carrot Games Logo.png" Width="200" Height="160"/>
                     <Label Content="MEMORY" Margin="0,45,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="./Bree Serif" FontSize="72" FontWeight="Bold" Width="330" Height="96"/>
                     <Button Style="{DynamicResource Rounded}" Content="Start" Margin="-330,-10,0,0" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Start_Click" FontFamily="./Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" Width="250" Height="100"/>
                     <Button Content="Sluiten" Margin="330,-10,0,0" BorderThickness="4,4,4,4" Background="#FFFF6666" FontFamily="./Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" SnapsToDevicePixels="True" FontWeight="Bold" Style="{DynamicResource Rounded}" Width="250" Height="100" Click="Sluiten_Click"/>
+                    <Button x:Name="Geluid_uit" HorizontalAlignment="Left" Margin="705,15,0,0" VerticalAlignment="Top" Width="80" Height="80" BorderBrush="#FF2B2B2B" BorderThickness="4" Grid.Column="1" Foreground="White" Background="#FFFF6666" Style="{DynamicResource Geluid}" Click="Geluid_uit_Click">
+                        <Button.Content>
+                            <StackPanel>
+                                <Image Name="image1"  Source="C:\Users\RedNo\Documents\GitHub\periode-1-gebruikersinteractie-groep18\Geluid aan geen achtergrond.png" Stretch="Fill" >
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}" Value="True">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <Image Name="image2" Source="C:\Users\RedNo\Documents\GitHub\periode-1-gebruikersinteractie-groep18\Geluid aan geen achtergrond.png" Stretch="Fill" >
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button x:Name="Geluid_aan" HorizontalAlignment="Left" Margin="705,15,0,0" VerticalAlignment="Top" Width="80" Height="80" BorderBrush="#FF2B2B2B" BorderThickness="4" Grid.Column="1" Foreground="White" Background="#FFFF6666" Style="{DynamicResource Geluid}" Click="Geluid_aan_Click" Visibility="Visible">
+                        <Button.Content>
+                            <StackPanel>
+                                <Image Name="image4" Source="C:\Users\RedNo\Documents\GitHub\periode-1-gebruikersinteractie-groep18\Geluid uit geen achtergrond.png" Stretch="Fill" >
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <Image x:Name="image3"  Source="C:\Users\RedNo\Documents\GitHub\periode-1-gebruikersinteractie-groep18\Geluid uit geen achtergrond.png" Stretch="Fill" >
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType={x:Type Button}, Mode=FindAncestor}}" Value="True">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Grid>
             </Grid>
         </Grid>
-    </Grid>
     </Viewbox>
 </Window>

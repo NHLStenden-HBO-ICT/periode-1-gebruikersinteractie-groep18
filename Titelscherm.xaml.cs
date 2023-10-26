@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,27 @@ namespace MemoryGame
         private void Sluiten_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Geluid_aan_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer musicPlayer = new SoundPlayer();
+            musicPlayer.SoundLocation = "BangersShort.wav";
+            musicPlayer.PlayLooping();
+
+            Geluid_uit.Visibility = Visibility.Visible;
+            Geluid_aan.Visibility = Visibility.Collapsed;
+
+        }
+
+        private void Geluid_uit_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer musicPlayer = new SoundPlayer();
+            musicPlayer.SoundLocation = "BangersShort.wav";
+            musicPlayer.Stop();
+
+            Geluid_uit.Visibility = Visibility.Collapsed;
+            Geluid_aan.Visibility = Visibility.Visible;
         }
     }
 }
