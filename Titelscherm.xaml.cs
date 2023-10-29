@@ -37,7 +37,7 @@ namespace MemoryGame
             Close();
         }
 
-        private void Geluid_aan_Click(object sender, RoutedEventArgs e)
+        /*private void Geluid_aan_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer musicPlayer = new SoundPlayer();
             musicPlayer.SoundLocation = "BangersShort.wav";
@@ -56,6 +56,6 @@ namespace MemoryGame
 
             Geluid_uit.Visibility = Visibility.Collapsed;
             Geluid_aan.Visibility = Visibility.Visible;
-        }
+        }*/
     }
 }
