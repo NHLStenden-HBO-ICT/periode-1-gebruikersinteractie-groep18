@@ -171,8 +171,10 @@
         <Grid Height="450" Width="800">
             <Grid Height="NaN" Width="NaN" Background="#FFFFF8F5">
                 <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5" CornerRadius="15,15,15,15" Grid.Column="1"/>
-                <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5"/>
-                <Button Style="{DynamicResource Rounded}" Content="Volgende" Margin="550,340,0,0" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_ClickVolgendScherm" FontFamily="Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" Height="60" Width="200"/>
+                <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5">
+                    <Button x:Name="knopVorige" Style="{DynamicResource Rounded}" Content="Vorige" Margin="25,355,565,25" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_ClickVorigeScherm" FontFamily="Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" Height="60" Width="200"/>
+                </Border>
+                <Button x:Name="knopVolgende" Style="{DynamicResource Rounded}" Content="Volgende" Margin="550,340,0,0" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_ClickVolgendScherm" FontFamily="Bree Serif" FontSize="36" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" Height="60" Width="200"/>
                 <Image Margin="300,264,300,8" Source="/Carrot Games Logo.png" Width="200" Height="160"/>
                 <Rectangle HorizontalAlignment="Left" Height="100" Margin="125,140,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FFFF3477" RadiusX="25" RadiusY="25" StrokeThickness="4"/>
                 <TextBlock x:Name="weergevenSpeler1" FontFamily="./Bree Serif" FontSize="36"  HorizontalAlignment="Left" Margin="125,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" TextAlignment="Center" Width="250"><Run Text="S"/><Run Text="peler"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>

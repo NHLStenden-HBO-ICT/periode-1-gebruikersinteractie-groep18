@@ -53,5 +53,12 @@ namespace MemoryGame
             BoardSelectionScreen.Show();
             this.Close();
         }
+
+        private void Button_ClickVorigeScherm(object sender, RoutedEventArgs e)
+        {
+            Window Titelscherm = new Titelscherm();
+            Titelscherm.Show();
+            this.Close();
+        }
     }
 }
