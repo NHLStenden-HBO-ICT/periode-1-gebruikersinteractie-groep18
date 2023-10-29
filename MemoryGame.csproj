@@ -17,4 +17,9 @@
     <Resource Include="Carrot Games Logo.png" />
     <Resource Include="Geluid aan geen achtergrond.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dieren plaatjes\" />
+    <Folder Include="Landen plaatjes\" />
+    <Folder Include="Knuffles Plaatjes\" />
+  </ItemGroup>
 </Project>
