@@ -24,7 +24,8 @@ namespace MemoryGame {
         public MemoryBoard() {
             InitializeComponent();
             parent = parentGrid;
-            
+            //verwijder de lijn hieronder als alle knoppen werken
+            generate(6, 5);
         }
 
         public static int width;
