@@ -20,7 +20,7 @@ namespace MemoryGame {
     /// <summary>
     /// Interaction logic for MemoryBoard.xaml
     /// </summary>
-    public partial class MemoryBoard : Page {
+    public partial class MemoryBoard : Window {
         public MemoryBoard() {
             InitializeComponent();
             parent = parentGrid;
