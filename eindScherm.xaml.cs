@@ -23,5 +23,19 @@ namespace MemoryGame
         {
             InitializeComponent();
         }
+
+        private void Button_ClickNieuwSpel(object sender, RoutedEventArgs e)
+        {
+            Window Titelscherm = new Titelscherm();
+            Titelscherm.Show();
+            this.Close();
+        }
+
+        private void Button_ClickNaarMenu(object sender, RoutedEventArgs e)
+        {
+            Window BoardSelectionScreen = new BoardSelectionScreen();
+            BoardSelectionScreen.Show();
+            this.Close();
+        }
     }
 }
