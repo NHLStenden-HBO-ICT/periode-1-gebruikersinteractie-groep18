@@ -27,7 +27,7 @@ namespace MemoryGame
         public ThemaSelectionScreen()
         {
             InitializeComponent();
-            currentButton = LandenButton;
+            currentButton = DierenButton;
             GeneratePreview(SplitTags(currentButton));
         }
 

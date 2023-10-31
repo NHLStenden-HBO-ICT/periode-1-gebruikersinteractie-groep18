@@ -84,8 +84,12 @@
         <Grid>
             <!--Hoeveel kolommen er zijn-->
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="960"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                
             </Grid.ColumnDefinitions>
             <Grid Margin="0 50 0 150" Grid.Column="0">
                 <!--Hoeveel ruimte elke kolom krijgt-->
@@ -97,20 +101,49 @@
                 </Grid.RowDefinitions>
                 <TextBlock Style="{DynamicResource TextBlockStyle}" Grid.Row="0">Memory</TextBlock>
                 <!--Knopjes-->
-                <Button Style="{DynamicResource RoundedButtonStyle}" Name="LandenButton" Grid.Row="1" Content="Landen" Tag="Landen" Click="PreviewButtonClick"/>
-                <Button Style="{DynamicResource RoundedButtonStyle}" Name="DierenButton" Grid.Row="2" Content="Dieren" Tag="Dieren" Click="PreviewButtonClick"/>
+                <Button Style="{DynamicResource RoundedButtonStyle}" Name="DierenButton" Grid.Row="1" Content="Dieren" Tag="Dieren" Click="PreviewButtonClick"/>
+                <Button Style="{DynamicResource RoundedButtonStyle}" Name="LandenButton" Grid.Row="2" Content="Landen" Tag="Landen" Click="PreviewButtonClick"/>
                 <Button Style="{DynamicResource RoundedButtonStyle}" Name="KnuffelsButton"  Grid.Row="3" Content="Knuffels" Tag="Knuffles" Click="PreviewButtonClick"/>
             </Grid>
-            <Border Background="#888888" Margin="-4 0 0 0" BorderBrush="#2B2B2B" BorderThickness="8 0 0 0" Grid.Column="1"/>
+            <Border Background="#888888" Margin="-4 0 0 0" BorderBrush="#2B2B2B" BorderThickness="8 0 0 0" Grid.Column="1" Grid.ColumnSpan="4"/>
             <Grid Name="previewRow" Grid.Column="1">
                 <!--Hoeveel ruimte elke rij krijgt-->
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="180"/>
+                  
                 </Grid.RowDefinitions>
-                <Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="2" Content="Verder" Click="NextButtonClick"/>
+                <Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="5" Content="Verder" Click="NextButtonClick" Margin="230,27.5,-490,27.5"/>
                 <!--Preview Grid-->
+                <!--Alle Plaatjes op 1 plek-->
+                
+                <!--Grid Row 1-->
+                <Image Source="Dieren plaatjes/1.jpg" Grid.Row="1" Width="260" Height="180" />
+                <Image Source="Dieren plaatjes/1.jpg" Grid.Row="1" Width="260" Height="180" Margin="240,0,-240,0" />
+                <Image Source="Dieren plaatjes/8.jpg" Grid.Row="1" Width="260" Height="180" Margin="480,0,-480,0" />
+                <Image Source="Dieren plaatjes/8.jpg" Grid.Row="1" Width="260" Height="180" Margin="720,0,-720,0" />
+                <!--Grid Row 2-->
+                <Image Source="Dieren plaatjes/15.jpg" Grid.Row="2" Width="260" Height="180" />
+                <Image Source="Dieren plaatjes/15.jpg" Grid.Row="2" Width="260" Height="180" Margin="240,0,-240,0" />
+                <Image Source="Dieren plaatjes/13.jpg" Grid.Row="2" Width="260" Height="180" Margin="480,0,-480,0" />
+                <Image Source="Dieren plaatjes/13.jpg" Grid.Row="2" Width="260" Height="180" Margin="720,0,-720,0" />
+
+                <!--Grid Row 3-->
+                <Image Source="Dieren plaatjes/11.jpg" Grid.Row="3" Width="260" Height="180" />
+                <Image Source="Dieren plaatjes/11.jpg" Grid.Row="3" Width="260" Height="180" Margin="240,0,-240,0"/>
+                <Image Source="Dieren plaatjes/14.jpg" Grid.Row="3" Width="260" Height="180" Margin="480,0,-480,0" />
+                <Image Source="Dieren plaatjes/14.jpg" Grid.Row="3" Width="260" Height="180" Margin="720,0,-720,0" />
+
+                <!--Grid Row 4-->
+                <Image Source="Dieren plaatjes/12.jpg" Grid.Row="4" Width="260" Height="180" />
+                <Image Source="Dieren plaatjes/12.jpg" Grid.Row="4" Width="260" Height="180" Margin="240,0,-240,0"/>
+                <Image Source="Dieren plaatjes/3.jpg" Grid.Row="4" Width="260" Height="180" Margin="480,0,-480,0" />
+                <Image Source="Dieren plaatjes/3.jpg" Grid.Row="4" Width="260" Height="180" Margin="720,0,-720,0" />
+
                 <Grid/>
             </Grid>
         </Grid>
