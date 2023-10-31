@@ -17,90 +17,42 @@ namespace MemoryGame {
 	/// Het bordgrootte scherm
 	/// </summary>
 	public partial class BoardSelectionScreen : Window {
-		// De knop die nu is uitgezet
-		Button currentButton;
-
-		// Zorgt ervoor dat 4 x 4 de eerste geselecteerde optie is
 		public BoardSelectionScreen() {
 			InitializeComponent();
-			currentButton = FourFourButton;
-			GeneratePreview(SplitTags(currentButton));
-		}
-
-		// Genereert een preview van de bordgrootte wanneer je op een grootte klikt
-		private void PreviewButtonClick(object sender, RoutedEventArgs e) {
-			GeneratePreview(SplitTags(sender));
 		}
 
 		private void NextButtonClick(object sender, RoutedEventArgs e) {
 			// Code om naar het volgende venster te gaan
 		}
 
-		// Zet de tags die je aan een knop kunt geven om naar arguments en schakelt de knop uit
-		private string[] SplitTags(object sender) {
-			// Zet de oude knop aan
-			currentButton.IsEnabled = true;
-			currentButton = sender as Button;
-			// En de nieuwe knop uit
-			currentButton.IsEnabled = false;
-			// Hier wordt elk argument opgesplitst naar een array
-			return currentButton.Tag.ToString().Split(' ');
+		private void PreviewButton1Click(object sender, RoutedEventArgs e) {
+			previewSize.Text = "4 x 4";
+			button1.IsEnabled = false;
+			button2.IsEnabled = true;
+			button3.IsEnabled = true;
+			grid1.Visibility = Visibility.Visible;
+			grid2.Visibility = Visibility.Hidden;
+			grid3.Visibility = Visibility.Hidden;
 		}
 
-		// Genereert en laat een preview van de bordgrootte zien als grid
-		private void GeneratePreview(string[] size) {
-			// Maakt een nieuw grid aan
-			Grid previewGrid = new();
-			// Zorgt ervoor dat de preview op de juiste volgorde staat
-			previewGrid.SetValue(Grid.RowProperty, 1);
-			// Stelt de breedte en hoogte van het grid in
-			int boardColumns = int.Parse(size[0]);
-			int boardRows = int.Parse(size[1]);
+		private void PreviewButton2Click(object sender, RoutedEventArgs e) {
+			previewSize.Text = "5 x 4";
+			button1.IsEnabled = true;
+			button2.IsEnabled = false;
+			button3.IsEnabled = true;
+			grid1.Visibility = Visibility.Hidden;
+			grid2.Visibility = Visibility.Visible;
+			grid3.Visibility = Visibility.Hidden;
+		}
 
-			// Ruimte voor boven
-			previewGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-			// Voegt kolommen toe
-			for(int y = 0; y < boardColumns; y++) {
-				previewGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(135, GridUnitType.Pixel) });
-			}
-			// Ruimte voor onder
-			previewGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-
-			// Ruimte voor links
-			previewGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
-			// Voegt rijen toe
-			for(int x = 0; x < boardRows; x++) {
-				previewGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(135, GridUnitType.Pixel) });
-			}
-			// Ruimte voor rechts
-			previewGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
-
-			// Zet een kaart in elk leeg vakje
-			for(int w = 0; w < boardColumns; w++) {
-				for(int h = 0; h < boardRows; h++) {
-					// Maakt een nieuwe rechthoek aan voor elke kaart
-					Border rectangle = new() {
-						Background = new SolidColorBrush(Color.FromRgb(255, 102, 102)),
-						BorderBrush = new SolidColorBrush(Color.FromRgb(43, 43, 43)),
-						BorderThickness = new Thickness(4),
-						CornerRadius = new CornerRadius(12),
-						// De ruimte tussen kaarten
-						Margin = new Thickness(5),
-					};
-					// Voegt de rechthoek toe aan de hierarchy
-					previewGrid.Children.Add(rectangle);
-					// Zet de rechthoek neer in het bijbehorende vakje
-					Grid.SetColumn(rectangle, previewGrid.ColumnDefinitions.Count - w - 2);
-					Grid.SetRow(rectangle, previewGrid.RowDefinitions.Count - h - 2);
-				}
-			}
-
-			// Vervangt de preview tekst
-			previewSize.Text = currentButton.Content.ToString();
-			// Verwijdert het oude grid
-			previewRow.Children.RemoveAt(2);
-			// Voegt het nieuwe grid toe
-			previewRow.Children.Add(previewGrid);
+		private void PreviewButton3Click(object sender, RoutedEventArgs e) {
+			previewSize.Text = "6 x 5";
+			button1.IsEnabled = true;
+			button2.IsEnabled = true;
+			button3.IsEnabled = false;
+			grid1.Visibility = Visibility.Hidden;
+			grid2.Visibility = Visibility.Hidden;
+			grid3.Visibility = Visibility.Visible;
 		}
 	}
 }
