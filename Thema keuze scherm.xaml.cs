@@ -14,7 +14,6 @@ using System.Windows.Shapes;
 
 namespace MemoryGame
 {
-    ///Niet al te veel opletten dit is allemaal van Sil gejat en moet ik later nog aanpassen.
     /// <summary>
     /// Het bordgrootte scherm
     /// </summary>
