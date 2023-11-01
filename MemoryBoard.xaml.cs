@@ -122,11 +122,8 @@ namespace MemoryGame {
             Button tempbutton = (Button)sender;
             int column = Grid.GetColumn(tempbutton);
             int row = Grid.GetRow(tempbutton);
-            Trace.WriteLine("/" + ImgFolder + "/" + cards[row][column] + ".jpg");
-            tempbutton.Content = new Image {
-				Source = new BitmapImage(new Uri("pack://application:,,,/dieren plaatjes/0.jpg")),
-				VerticalAlignment = VerticalAlignment.Center
-			};
+            tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".jpg")));
+                
 		}
 
 

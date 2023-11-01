@@ -8,6 +8,23 @@
   <ItemGroup>
     <None Remove="BreeSerif.ttf" />
     <None Remove="Carrot Games Logo.png" />
+    <None Remove="Dieren plaatjes\0.jpg" />
+    <None Remove="Dieren plaatjes\1.jpg" />
+    <None Remove="Dieren plaatjes\10.jpg" />
+    <None Remove="Dieren plaatjes\11.jpg" />
+    <None Remove="Dieren plaatjes\12.jpg" />
+    <None Remove="Dieren plaatjes\13.jpg" />
+    <None Remove="Dieren plaatjes\14.jpg" />
+    <None Remove="Dieren plaatjes\15.jpg" />
+    <None Remove="Dieren plaatjes\2.jpg" />
+    <None Remove="Dieren plaatjes\3.jpg" />
+    <None Remove="Dieren plaatjes\4.jpg" />
+    <None Remove="Dieren plaatjes\4.png" />
+    <None Remove="Dieren plaatjes\5.jpg" />
+    <None Remove="Dieren plaatjes\6.jpg" />
+    <None Remove="Dieren plaatjes\7.jpg" />
+    <None Remove="Dieren plaatjes\8.jpg" />
+    <None Remove="Dieren plaatjes\9.jpg" />
     <None Remove="Geluid aan geen achtergrond.png" />
   </ItemGroup>
   <ItemGroup>
@@ -15,10 +32,24 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Carrot Games Logo.png" />
+    <Resource Include="Dieren plaatjes\0.jpg" />
+    <Resource Include="Dieren plaatjes\1.jpg" />
+    <Resource Include="Dieren plaatjes\10.jpg" />
+    <Resource Include="Dieren plaatjes\11.jpg" />
+    <Resource Include="Dieren plaatjes\12.jpg" />
+    <Resource Include="Dieren plaatjes\13.jpg" />
+    <Resource Include="Dieren plaatjes\14.jpg" />
+    <Resource Include="Dieren plaatjes\2.jpg" />
+    <Resource Include="Dieren plaatjes\3.jpg" />
+    <Resource Include="Dieren plaatjes\4.jpg" />
+    <Resource Include="Dieren plaatjes\5.jpg" />
+    <Resource Include="Dieren plaatjes\6.jpg" />
+    <Resource Include="Dieren plaatjes\7.jpg" />
+    <Resource Include="Dieren plaatjes\8.jpg" />
+    <Resource Include="Dieren plaatjes\9.jpg" />
     <Resource Include="Geluid aan geen achtergrond.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dieren Plaatjes\" />
     <Folder Include="Landen plaatjes\" />
     <Folder Include="Knuffles Plaatjes\" />
   </ItemGroup>
