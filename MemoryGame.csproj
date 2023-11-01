@@ -24,6 +24,7 @@
     <None Remove="Dieren plaatjes\8.jpg" />
     <None Remove="Dieren plaatjes\9.jpg" />
     <None Remove="Geluid aan geen achtergrond.png" />
+    <None Remove="Geluid uit geen achtergrond.png" />
     <None Remove="Knuffles Plaatjes\1.jpg" />
     <None Remove="Knuffles Plaatjes\10.jpg" />
     <None Remove="Knuffles Plaatjes\11.jpg" />
@@ -102,6 +103,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Dieren plaatjes\9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Geluid uit geen achtergrond.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Knuffles Plaatjes\1.jpg">
@@ -195,6 +199,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Carrot Games Logo.png" />
-    <Resource Include="Geluid aan geen achtergrond.png" />
+    <Content Include="Geluid aan geen achtergrond.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
