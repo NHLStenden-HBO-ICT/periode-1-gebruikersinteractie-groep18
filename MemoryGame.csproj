@@ -18,7 +18,7 @@
     <Resource Include="Geluid aan geen achtergrond.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dieren plaatjes\" />
+    <Folder Include="Dieren Plaatjes\" />
     <Folder Include="Landen plaatjes\" />
     <Folder Include="Knuffles Plaatjes\" />
   </ItemGroup>

@@ -95,7 +95,7 @@
 			<Button Style="{DynamicResource RoundedButtonStyle}" Name="button3" Content="6 x 5" Click="PreviewButton3Click" Margin="230,730,1190,225"/>
 			<TextBlock Style="{DynamicResource TextBlockStyle}" Name="previewSize" FontSize="96" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1344,50,0,0">4 x 4</TextBlock>
 			<Button Style="{DynamicResource RoundedButtonStyle}" Content="Verder" Click="NextButtonClick" Margin="1190,905,230,50"/>
-			<Grid x:Name="grid1" Visibility="Visible">
+			<Grid x:Name="grid1" Visibility="Visible" Margin="-10,0,10,0">
 				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,287,616,693"/>
 				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,287,492,693"/>
 				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,287,368,693"/>

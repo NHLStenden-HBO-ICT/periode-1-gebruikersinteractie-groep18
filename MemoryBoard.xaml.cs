@@ -26,7 +26,7 @@ namespace MemoryGame {
             InitializeComponent();
             parent = parentGrid;
             //verwijder de lijn hieronder als alle knoppen werken
-            generate(6, 5);
+            generate(6, 5, "Dieren Plaatjes");
         }
 
         public static int width;
@@ -37,11 +37,12 @@ namespace MemoryGame {
 
         public static Grid cardGrid;
         private static Grid parent;
+        private static string ImgFolder;
 
-        public static bool generate(int w, int h) {
+        public static bool generate(int w, int h, string folder) {
             width = w;
             height = h;
-
+            ImgFolder = folder;
             int cardnum = width * height;
             if(cardnum % 2 == 0) { 
                 //hoeveelheid kaarten is een even getal
@@ -104,6 +105,7 @@ namespace MemoryGame {
                         Width = 100,
                     };
                     tempbutton.SetResourceReference(Control.StyleProperty, "MemoryCardStyle");
+                    tempbutton.Click += new RoutedEventHandler(ClickCard);
 					//zet de row on column
 					Grid.SetColumn(tempbutton, j);
                     Grid.SetRow(tempbutton, i);
@@ -116,6 +118,17 @@ namespace MemoryGame {
 
             return true;
         }
+        private static void ClickCard(object sender, RoutedEventArgs e) {
+            Button tempbutton = (Button)sender;
+            int column = Grid.GetColumn(tempbutton);
+            int row = Grid.GetRow(tempbutton);
+            Trace.WriteLine("/" + ImgFolder + "/" + cards[row][column] + ".jpg");
+            tempbutton.Content = new Image {
+				Source = new BitmapImage(new Uri("pack://application:,,,/dieren plaatjes/0.jpg")),
+				VerticalAlignment = VerticalAlignment.Center
+			};
+		}
+
 
         private void Geluid_aan_Click(object sender, RoutedEventArgs e)
         {
