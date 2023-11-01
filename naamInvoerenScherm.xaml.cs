@@ -37,20 +37,12 @@ namespace MemoryGame
         {
             
         }
-        public void Button_ClickSpeler1(object sender, RoutedEventArgs e)
-        {
-            string speler1 = invoerSpeler1.Text;
-            weergevenSpeler1.Text = invoerSpeler1.Text;
-        }
-
-        public void Button_ClickSpeler2(object sender, RoutedEventArgs e)
-        {
-            string speler2 = invoerSpeler2.Text;
-            weergevenSpeler2.Text = invoerSpeler2.Text;
-        }
 
         private void Button_ClickVolgendScherm(object sender, RoutedEventArgs e)
         {
+            speler1 = invoerSpeler1.Text;
+            speler2 = invoerSpeler2.Text;
+
             Window BoardSelectionScreen = new BoardSelectionScreen();
             BoardSelectionScreen.Show();
             this.Close();

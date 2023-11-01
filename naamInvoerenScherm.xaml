@@ -179,10 +179,10 @@
                 <Rectangle HorizontalAlignment="Left" Height="100" Margin="125,140,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FFFF3477" RadiusX="25" RadiusY="25" StrokeThickness="4"/>
                 <TextBlock x:Name="weergevenSpeler1" FontFamily="./Bree Serif" FontSize="36"  HorizontalAlignment="Left" Margin="125,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" TextAlignment="Center" Width="250"><Run Text="S"/><Run Text="peler"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
                 <Label Content="MEMORY" Margin="0,45,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="Bree Serif" FontSize="72" FontWeight="Bold" Width="330" Height="96"/>
-                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="invoerSpeler1" HorizontalAlignment="Left" Margin="200,185,0,0" TextWrapping="Wrap" Text="Naam" VerticalAlignment="Top" Width="100" TextChanged="TextBox_TextChanged_1" Background="#FFFFF8F5" Height="24" FontFamily="Bree Serif" FontSize="20" TextAlignment="Center" BorderBrush="#FF2B2B2B" SelectionBrush="#FFFF6666"/>
+                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="invoerSpeler1" HorizontalAlignment="Left" Margin="200,190,0,0" TextWrapping="Wrap" Text="Naam" VerticalAlignment="Top" Width="100" TextChanged="TextBox_TextChanged_1" Background="#FFFFF8F5" Height="24" FontFamily="Bree Serif" FontSize="20" TextAlignment="Center" BorderBrush="#FF2B2B2B" SelectionBrush="#FFFF6666"/>
                 <Rectangle Height="100" Margin="425,140,0,0" Stroke="Black" VerticalAlignment="Top" Fill="#FFBC37" RadiusX="25" RadiusY="25" Width="250" StrokeThickness="4" HorizontalAlignment="Left"/>
                 <TextBlock x:Name="weergevenSpeler2" FontFamily="./Bree Serif" FontSize="36" Margin="425,141,0,0" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Center" Width="250"><Run Text="S"/><Run Text="peler"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-                <TextBox x:Name="invoerSpeler2" Margin="500,185,0,0" TextWrapping="Wrap" Text="Naam" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1" Background="#FFFFF8F5" RenderTransformOrigin="0.406,2.29" Width="100" Height="24" FontFamily="Bree Serif" FontSize="20" TextAlignment="Center" SelectionBrush="#FFFF6666" BorderBrush="#FF2B2B2B" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left">
+                <TextBox x:Name="invoerSpeler2" Margin="500,190,0,0" TextWrapping="Wrap" Text="Naam" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1" Background="#FFFFF8F5" RenderTransformOrigin="0.406,2.29" Width="100" Height="24" FontFamily="Bree Serif" FontSize="20" TextAlignment="Center" SelectionBrush="#FFFF6666" BorderBrush="#FF2B2B2B" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left">
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -192,8 +192,8 @@
                         </TransformGroup>
                     </TextBox.RenderTransform>
                 </TextBox>
-                <Button x:Name="enterSpeler1" Content="ENTER" HorizontalAlignment="Left" Margin="200,212,0,0" VerticalAlignment="Top" Click="Button_ClickSpeler1" Width="100" Background="#FFFFF8F5" FontFamily="Bree Serif" FontSize="14" BorderBrush="#FF2B2B2B" Style="{DynamicResource ButtonStyle1}" Height="20" />
-                <Button Style="{DynamicResource ButtonStyle1}" x:Name="enterSpeler2" Content="ENTER" HorizontalAlignment="Left" Margin="500,212,0,0" VerticalAlignment="Top" Click="Button_ClickSpeler2" Width="100" Background="#FFFFF8F5" FontFamily="Bree Serif" FontSize="14" BorderBrush="#FF2B2B2B" Height="20" />
+                
+               
             </Grid>
         </Grid>
     </Viewbox>
