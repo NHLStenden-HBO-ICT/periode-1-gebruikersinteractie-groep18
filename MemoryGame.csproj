@@ -42,13 +42,13 @@
     <None Remove="Knuffles Plaatjes\7.jpg" />
     <None Remove="Knuffles Plaatjes\8.jpg" />
     <None Remove="Knuffles Plaatjes\9.jpg" />
+    <None Remove="Landen plaatjes\0.png" />
     <None Remove="Landen plaatjes\1.png" />
     <None Remove="Landen plaatjes\10.png" />
     <None Remove="Landen plaatjes\11.png" />
     <None Remove="Landen plaatjes\12.png" />
     <None Remove="Landen plaatjes\13.png" />
     <None Remove="Landen plaatjes\14.png" />
-    <None Remove="Landen plaatjes\15.png" />
     <None Remove="Landen plaatjes\2.png" />
     <None Remove="Landen plaatjes\3.png" />
     <None Remove="Landen plaatjes\4.png" />
@@ -167,7 +167,7 @@
     <Content Include="Landen plaatjes\14.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Landen plaatjes\15.png">
+    <Content Include="Landen plaatjes\0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Landen plaatjes\2.png">
@@ -211,8 +211,5 @@
     <Resource Include="Dieren plaatjes\8.jpg" />
     <Resource Include="Dieren plaatjes\9.jpg" />
     <Resource Include="Geluid aan geen achtergrond.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Landen plaatjes\" />
   </ItemGroup>
 </Project>

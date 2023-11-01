@@ -281,10 +281,10 @@
                     <Image Margin="0,0,-1,0" Source="/Landen Plaatjes/14.png" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,721,244,259">
-                    <Image Margin="0,0,-1,0" Source="/Landen Plaatjes/15.png" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Landen Plaatjes/0.png" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1700,721,120,259">
-                    <Image Margin="0,0,-1,0" Source="/Landen Plaatjes/15.png" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Landen Plaatjes/0.png" Stretch="Fill"/>
                 </Border>
             </Grid>
             <Grid x:Name="grid3" Visibility="Hidden">

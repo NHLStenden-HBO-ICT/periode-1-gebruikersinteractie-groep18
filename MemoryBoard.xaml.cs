@@ -141,7 +141,14 @@ namespace MemoryGame {
                 Button tempbutton = (Button)sender;
                 int column = Grid.GetColumn(tempbutton);
                 int row = Grid.GetRow(tempbutton);
-                tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".jpg")));
+                if(ImgFolder == "Landen plaatjes") {
+                    //stomme edge case die minder moeite is dan alles converten naar jpg
+                    tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".png")));
+                }
+                else {
+                    tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".jpg")));
+                }
+               
                 tempbutton.Focusable = false;
                 cardsturned.Add(new int[2] { row, column });
                 buttonspressed.Add(tempbutton);
