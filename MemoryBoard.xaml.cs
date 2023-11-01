@@ -50,7 +50,13 @@ namespace MemoryGame {
 
         public static bool blockinput = false;
 
-        public bool generate(int w, int h, string folder) {
+		private void PreviousButtonClick(object sender, RoutedEventArgs e) {
+			Titelscherm screen = new();
+			screen.Show();
+			Close();
+		}
+
+		public bool generate(int w, int h, string folder) {
             width = w;
             height = h;
             ImgFolder = folder;

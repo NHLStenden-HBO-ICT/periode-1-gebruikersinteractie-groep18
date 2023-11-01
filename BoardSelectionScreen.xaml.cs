@@ -38,6 +38,12 @@ namespace MemoryGame {
 			this.Close();
 		}
 
+		private void PreviousButtonClick(object sender, RoutedEventArgs e) {
+			Titelscherm screen = new();
+			screen.Show();
+			Close();
+		}
+
 		private void PreviewButton1Click(object sender, RoutedEventArgs e) {
 			previewSize.Text = "4 x 4";
 			button1.IsEnabled = false;

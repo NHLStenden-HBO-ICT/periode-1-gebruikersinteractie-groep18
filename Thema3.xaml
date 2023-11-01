@@ -90,12 +90,14 @@
         <Grid Width="1920" Height="1080">
             <Border Background="#888888" BorderBrush="#2B2B2B" BorderThickness="8,0,0,0" Margin="956,0,0,0"/>
             <TextBlock Style="{DynamicResource TextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,78,0,0">Memory</TextBlock>
-            <Button Style="{DynamicResource RoundedButtonStyle}" Name="button1" IsEnabled="False" Content="Dieren" Click="PreviewButton1Click" Margin="230,382,1190,573"/>
-            <Button Style="{DynamicResource RoundedButtonStyle}" Name="button2" Content="Landen" Click="PreviewButton2Click" Margin="230,555,1190,400"/>
-            <Button Style="{DynamicResource RoundedButtonStyle}" Name="button3" Content="Knuffels" Click="PreviewButton3Click" Margin="230,730,1190,225"/>
+			<Button Style="{DynamicResource RoundedButtonStyle}" Name="button1" IsEnabled="False" Content="Dieren" Click="PreviewButton1Click" Margin="230,320,1190,635"/>
+			<Button Style="{DynamicResource RoundedButtonStyle}" Name="button2" Content="Landen" Click="PreviewButton2Click" Margin="230,495,1190,460"/>
+			<Button Style="{DynamicResource RoundedButtonStyle}" Name="button3" Content="Knuffels" Click="PreviewButton3Click" Margin="230,670,1190,285"/>
             <TextBlock Style="{DynamicResource TextBlockStyle}" Name="previewSize" FontSize="96" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1344,50,0,0">Dieren</TextBlock>
             <Button Style="{DynamicResource RoundedButtonStyle}" Content="Verder" Click="NextButtonClick" Margin="1190,905,230,50"/>
-            <Grid x:Name="grid1" Visibility="Visible">
+			<Button Style="{DynamicResource RoundedButtonStyle}" Content="Terug" Click="PreviousButtonClick" Margin="230,905,1190,50"/>
+
+			<Grid x:Name="grid1" Visibility="Visible">
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1080,225,740,755">
                     <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/1.jpg" Stretch="Fill"/>
                 </Border>

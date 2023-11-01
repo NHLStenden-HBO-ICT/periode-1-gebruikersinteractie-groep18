@@ -40,7 +40,13 @@ namespace MemoryGame
             this.Close();
         }
 
-        private void PreviewButton1Click(object sender, RoutedEventArgs e)
+		private void PreviousButtonClick(object sender, RoutedEventArgs e) {
+			BoardSelectionScreen screen = new();
+			screen.Show();
+			Close();
+		}
+
+		private void PreviewButton1Click(object sender, RoutedEventArgs e)
         {
             previewSize.Text = "Dieren";
             button1.IsEnabled = false;
