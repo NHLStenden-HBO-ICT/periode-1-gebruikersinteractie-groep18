@@ -93,21 +93,22 @@ namespace MemoryGame {
 
             for(int i = 0; i < height; i++) {
                 for(int j = 0; j < width; j++) {
-                    Border rectangle = new() {
+                    Button tempbutton = new() {
                         Background = new SolidColorBrush(Color.FromRgb(255, 102, 102)),
                         BorderBrush = new SolidColorBrush(Color.FromRgb(43, 43, 43)),
                         BorderThickness = new Thickness(4),
-                        CornerRadius = new CornerRadius(12),
-                        // De ruimte tussen kaarten
-                        Margin = new Thickness(5),
+                        
+					    // De ruimte tussen kaarten
+					    Margin = new Thickness(5),
                         Height = 100,
                         Width = 100,
                     };
-                    //zet de row on column
-                    Grid.SetColumn(rectangle, j);
-                    Grid.SetRow(rectangle, i);
+                    tempbutton.SetResourceReference(Control.StyleProperty, "MemoryCardStyle");
+					//zet de row on column
+					Grid.SetColumn(tempbutton, j);
+                    Grid.SetRow(tempbutton, i);
                     //voeg hem toe aan de card grid
-                    cardGrid.Children.Add(rectangle);
+                    cardGrid.Children.Add(tempbutton);
                 }
             }
             //voeg de card grid toe aan de parent grid
