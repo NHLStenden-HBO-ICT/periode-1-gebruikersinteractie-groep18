@@ -177,8 +177,8 @@ namespace MemoryGame {
                 else {
                     score2++;
                 }
-                cardGrid.Children.Remove(buttonspressed[0]);
-                cardGrid.Children.Remove(buttonspressed[1]);
+                buttonspressed[0].Visibility = Visibility.Hidden;
+                buttonspressed[1].Visibility = Visibility.Hidden;
                 Trace.WriteLine("removed buttons");
                 RemainingCards -= 2;
                 if(RemainingCards <= 0) {
