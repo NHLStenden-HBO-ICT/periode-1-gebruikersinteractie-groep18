@@ -27,6 +27,10 @@ namespace MemoryGame
             private void NextButtonClick(object sender, RoutedEventArgs e)
             {
                 // Code om naar het volgende venster te gaan
+                MemoryBoard memboard = new MemoryBoard();
+                MemoryBoard.generate(4, 4, "dieren plaatjes");
+                memboard.Show();
+                this.Close();
             }
 
             private void PreviewButton1Click(object sender, RoutedEventArgs e)

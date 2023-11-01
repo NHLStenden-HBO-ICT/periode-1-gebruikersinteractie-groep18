@@ -24,10 +24,11 @@ namespace MemoryGame {
     /// </summary>
     public partial class MemoryBoard : Window {
         public MemoryBoard() {
+            Trace.WriteLine("initializing memoryboard");
             InitializeComponent();
             parent = parentGrid;
             //verwijder de lijn hieronder als alle knoppen werken
-            generate(6, 5, "Dieren Plaatjes");
+            //generate(6, 5, "Dieren Plaatjes");
         }
 
         public static int width;
