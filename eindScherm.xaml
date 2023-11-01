@@ -173,13 +173,13 @@
                 <Border BorderBrush="#FFFF6666" BorderThickness="5,5,5,5" RenderTransformOrigin="1,1"/>
                 <Label Content="5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFBC37" FontFamily="Bree Serif" FontSize="40" FontWeight="Bold" Width="35" Height="54" Margin="437,234,0,0"/>
                 <Label Content="3" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#c36" FontFamily="Bree Serif" FontSize="40" FontWeight="Bold" Width="35" Height="54" Margin="315,234,0,0"/>
-                <Image Margin="432,196,325,211" Source="/Image5.png" Stretch="Fill"/>
-                <Image x:Name="rodeKaart" Margin="0,195,446,211" Source="/Image4.png" Stretch="Fill" Opacity="0.98" HorizontalAlignment="Right" Width="41"/>
-                <Button x:Name="knopNieuwSpel_Copy" Style="{DynamicResource Rounded}" Content="Nieuw Spel" Margin="230,308,413,96" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_ClickNieuwSpel" FontFamily="Bree Serif" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" FontSize="18"/>
-                <Label Content="Speler 1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="Bree Serif" FontSize="18" Width="80" Height="34" FontWeight="Bold" Margin="415,158,0,0"/>
+                <Button x:Name="knopNieuwSpel_Copy" Style="{DynamicResource Rounded}" Content="Nieuw spel" Margin="230,308,413,96" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_ClickNieuwSpel" FontFamily="Bree Serif" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" FontSize="18"/>
+                <Label Content="Speler 2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="Bree Serif" FontSize="18" Width="80" Height="34" FontWeight="Bold" Margin="415,158,0,0"/>
                 <Label Content="Speler 1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="Bree Serif" FontSize="18" Width="80" Height="34" Margin="294,158,0,0" FontWeight="Bold"/>
-                <Button x:Name="knopNaarMenu" Style="{DynamicResource Rounded}" Content="naar menu" Margin="416,308,230,96" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_ClickNaarMenu" FontFamily="Bree Serif" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" FontSize="18"/>
+                <Button x:Name="knopNaarMenu" Style="{DynamicResource Rounded}" Content="Naar menu" Margin="416,308,230,96" BorderThickness="4,4,4,4" Background="#FFFF6666" Click="Button_ClickNaarMenu" FontFamily="Bree Serif" BorderBrush="#FF2B2B2B" Foreground="#FF2B2B2B" FontWeight="Bold" FontSize="18"/>
                 <Label Content="Eindstand" Margin="0,86,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF2B2B2B" FontFamily="Bree Serif" FontSize="40" FontWeight="Bold" Width="200" Height="54"/>
+                <Image Margin="425,185,0,0" Source="/geleKaart-removebg-preview.png" Stretch="Fill" Height="55" Width="55" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image Margin="305,185,0,0" Source="/rodeKaart-removebg-preview.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" Height="55"/>
 
             </Grid>
         </Grid>

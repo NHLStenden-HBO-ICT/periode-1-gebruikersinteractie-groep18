@@ -8,14 +8,22 @@
   <ItemGroup>
     <None Remove="BreeSerif.ttf" />
     <None Remove="Carrot Games Logo.png" />
+    <None Remove="geleKaart-removebg-preview.png" />
     <None Remove="Geluid aan geen achtergrond.png" />
+    <None Remove="rodeKaart-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="BreeSerif.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Carrot Games Logo.png" />
+    <Content Include="geleKaart-removebg-preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Geluid aan geen achtergrond.png" />
+    <Content Include="rodeKaart-removebg-preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dieren plaatjes\" />
