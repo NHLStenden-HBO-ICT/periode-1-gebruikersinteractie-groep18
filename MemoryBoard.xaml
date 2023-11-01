@@ -141,7 +141,7 @@
                             </Style>
                         </Image.Style>
                     </Image>
-                    <Image Name="image2" Source="/Geluid uit geen achtergrond.png" Stretch="Fill" >
+                    <Image Name="image2" Source="/Geluid aan geen achtergrond.png" Stretch="Fill" >
                         <Image.Style>
                             <Style TargetType="Image">
                                 <Setter Property="Visibility" Value="Collapsed" />
