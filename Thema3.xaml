@@ -116,10 +116,10 @@
                 </Border>
 
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1080,349,740,631">
-                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/4.png" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/4.jpg" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,349,616,631">
-                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/4.png" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/4.jpg" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,349,492,631">
                     <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/5.jpg" Stretch="Fill"/>
@@ -185,10 +185,10 @@
                     <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/14.jpg" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,721,244,259">
-                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/15.jpg" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/0.jpg" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1700,721,120,259">
-                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/15.jpg" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/0.jpg" Stretch="Fill"/>
                 </Border>
             </Grid>
             <Grid x:Name="grid2" Visibility="Hidden">

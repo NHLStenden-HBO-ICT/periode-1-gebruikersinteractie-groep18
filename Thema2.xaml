@@ -114,10 +114,10 @@
                 </Border>
 
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1142,411,678,569">
-                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/4.png" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/4.jpg" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1266,411,554,569">
-                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/4.png" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/4.jpg" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1390,411,430,569">
                     <Image Margin="0,0,-1,0" Source="/Dieren plaatjes/5.jpg" Stretch="Fill"/>
