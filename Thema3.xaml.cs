@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MemoryGame
 {
     /// <summary>
-    /// Interaction logic for Thema_3.xaml
+    /// Interaction logic for Thema3.xaml
     /// </summary>
-    public partial class Thema_3 : Window
+    public partial class Thema3 : Window
     {
-        public Thema_3()
+        public Thema3()
         {
             InitializeComponent();
         }
@@ -27,6 +27,16 @@ namespace MemoryGame
         private void NextButtonClick(object sender, RoutedEventArgs e)
         {
             // Code om naar het volgende venster te gaan
+            MemoryBoard memboard = new MemoryBoard();
+            if (previewSize.Text == "knuffels") {
+                //edge case ivm spelfout in folder naam
+                MemoryBoard.generate(6, 5, "knuffles plaatjes");
+            }
+            else {
+                MemoryBoard.generate(6, 5, previewSize.Text + " plaatjes");
+            }
+            memboard.Show();
+            this.Close();
         }
 
         private void PreviewButton1Click(object sender, RoutedEventArgs e)

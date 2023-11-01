@@ -23,6 +23,19 @@ namespace MemoryGame {
 
 		private void NextButtonClick(object sender, RoutedEventArgs e) {
 			// Code om naar het volgende venster te gaan
+			if(previewSize.Text == "4 x 4") {
+				Thema1 thema1 = new Thema1();
+				thema1.Show();
+			}
+			else if(previewSize.Text == "5 x 4") {
+                Thema2 thema2 = new Thema2();
+                thema2.Show();
+            }
+			else {
+                Thema3 thema3 = new Thema3();
+                thema3.Show();
+            }
+			this.Close();
 		}
 
 		private void PreviewButton1Click(object sender, RoutedEventArgs e) {

@@ -28,6 +28,16 @@ namespace MemoryGame
         private void NextButtonClick(object sender, RoutedEventArgs e)
         {
             // Code om naar het volgende venster te gaan
+            MemoryBoard memboard = new MemoryBoard();
+            if (previewSize.Text == "knuffels") {
+                //edge case ivm spelfout in folder naam
+                MemoryBoard.generate(5, 4, "knuffles plaatjes");
+            }
+            else {
+                MemoryBoard.generate(5, 4, previewSize.Text + " plaatjes");
+            }
+            memboard.Show();
+            this.Close();
         }
 
         private void PreviewButton1Click(object sender, RoutedEventArgs e)
