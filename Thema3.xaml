@@ -382,10 +382,10 @@
                     <Image Margin="0,0,-1,0" Source="/Knuffles Plaatjes/14.jpg" Stretch="Fill"/>
                 </Border>
                 <Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,721,244,259">
-                    <Image Margin="0,0,-1,0" Source="/Knuffles Plaatjes/15.jpg" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Knuffles Plaatjes/0.jpg" Stretch="Fill"/>
                     </Border>
                     <Border Style="{DynamicResource PreviewCardStyle}" Margin="1700,721,120,259">
-                    <Image Margin="0,0,-1,0" Source="/Knuffles Plaatjes/15.jpg" Stretch="Fill"/>
+                    <Image Margin="0,0,-1,0" Source="/Knuffles Plaatjes/0.jpg" Stretch="Fill"/>
                 </Border>
             </Grid>
         </Grid>
