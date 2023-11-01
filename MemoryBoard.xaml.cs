@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 
 
@@ -26,7 +27,7 @@ namespace MemoryGame {
             InitializeComponent();
             parent = parentGrid;
             //verwijder de lijn hieronder als alle knoppen werken
-            generate(6, 5);
+            generate(6, 5, "Dieren Plaatjes");
         }
 
         public static int width;
@@ -37,13 +38,31 @@ namespace MemoryGame {
 
         public static Grid cardGrid;
         private static Grid parent;
+        private static string ImgFolder;
 
-        public static bool generate(int w, int h) {
+        public static bool PlayerOneTurn = true;
+        public static List<int[]> cardsturned = new List<int[]>();
+        public static List<Button> buttonspressed = new List<Button>();
+        public static int RemainingCards;
+
+        public static int score1;
+        public static int score2;
+
+        public static bool blockinput = false;
+
+        public static bool generate(int w, int h, string folder) {
             width = w;
             height = h;
+            ImgFolder = folder;
+
+            score1 = 0;
+            score2 = 0;
+            PlayerOneTurn = true;
 
             int cardnum = width * height;
-            if(cardnum % 2 == 0) { 
+            RemainingCards = cardnum;
+
+            if (cardnum % 2 == 0) { 
                 //hoeveelheid kaarten is een even getal
                 List<int> sortedcards = new List<int>();
                 for(int i = 0; i < cardnum / 2; i++) {
@@ -93,27 +112,104 @@ namespace MemoryGame {
 
             for(int i = 0; i < height; i++) {
                 for(int j = 0; j < width; j++) {
-                    Border rectangle = new() {
+                    Button tempbutton = new() {
                         Background = new SolidColorBrush(Color.FromRgb(255, 102, 102)),
                         BorderBrush = new SolidColorBrush(Color.FromRgb(43, 43, 43)),
                         BorderThickness = new Thickness(4),
-                        CornerRadius = new CornerRadius(12),
-                        // De ruimte tussen kaarten
-                        Margin = new Thickness(5),
+                        
+					    // De ruimte tussen kaarten
+					    Margin = new Thickness(5),
                         Height = 100,
                         Width = 100,
                     };
-                    //zet de row on column
-                    Grid.SetColumn(rectangle, j);
-                    Grid.SetRow(rectangle, i);
+                    tempbutton.SetResourceReference(Control.StyleProperty, "MemoryCardStylep1");
+                    tempbutton.Click += new RoutedEventHandler(ClickCard);
+					//zet de row on column
+					Grid.SetColumn(tempbutton, j);
+                    Grid.SetRow(tempbutton, i);
                     //voeg hem toe aan de card grid
-                    cardGrid.Children.Add(rectangle);
+                    cardGrid.Children.Add(tempbutton);
                 }
             }
             //voeg de card grid toe aan de parent grid
             parent.Children.Add(cardGrid);
 
             return true;
+        }
+        private static void ClickCard(object sender, RoutedEventArgs e) {
+            if(!blockinput) {
+                Button tempbutton = (Button)sender;
+                int column = Grid.GetColumn(tempbutton);
+                int row = Grid.GetRow(tempbutton);
+                tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".jpg")));
+                tempbutton.Focusable = false;
+                cardsturned.Add(new int[2] { row, column });
+                buttonspressed.Add(tempbutton);
+                if (cardsturned.Count() >= 2) {
+                    //player turned 2 cards
+                    //TODO: wait a bit before ending turn
+                    var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
+                    blockinput = true;
+                    timer.Start();
+                    timer.Tick += (sender, args) =>
+                    {
+                        timer.Stop();
+                        blockinput = false;
+                        EndTurn();
+                    };
+                }
+            }
+            
+		}
+        private static void EndTurn() {
+            int row1 = cardsturned[0][0];
+            int column1 = cardsturned[0][1];
+            int row2 = cardsturned[1][0];
+            int column2 = cardsturned[1][1];
+            Trace.WriteLine("1: " + cards[row1][column1]);
+            Trace.WriteLine("2: " + cards[row2][column2]);
+            if(cards[row1][column1] == cards[row2][column2]) {
+                //cards are the same
+
+                if(PlayerOneTurn) {
+                    score1++;
+                }
+                else {
+                    score2++;
+                }
+                cardGrid.Children.Remove(buttonspressed[0]);
+                cardGrid.Children.Remove(buttonspressed[1]);
+                Trace.WriteLine("removed buttons");
+                RemainingCards -= 2;
+                if(RemainingCards <= 0) {
+                    //game ended
+                    Trace.WriteLine("game ended");
+                    Trace.WriteLine("player 1: " + score1);
+                    Trace.WriteLine("player 2: " + score2);
+                    //TODO: go to end screen
+                }
+            }
+            else {
+                PlayerOneTurn = !PlayerOneTurn;
+                foreach (var item in cardGrid.Children) {
+                    Button tempbtn = (Button)item;
+                    if (PlayerOneTurn) {
+                        tempbtn.SetResourceReference(Control.StyleProperty, "MemoryCardStylep1");
+                        tempbtn.Background = new SolidColorBrush(Color.FromRgb(255, 102, 102));
+                    }
+                    else {
+                        tempbtn.SetResourceReference(Control.StyleProperty, "MemoryCardStylep2");
+                        tempbtn.Background = new SolidColorBrush(Color.FromRgb(255, 188, 55));
+                    }
+                }
+                buttonspressed[0].Focusable = true;
+                buttonspressed[1].Focusable = true;
+            }
+            
+            buttonspressed.RemoveAt(1);
+            buttonspressed.RemoveAt(0);
+            cardsturned.RemoveAt(1);
+            cardsturned.RemoveAt(0);
         }
 
         private void Geluid_aan_Click(object sender, RoutedEventArgs e)

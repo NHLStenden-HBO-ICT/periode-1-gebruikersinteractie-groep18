@@ -76,44 +76,108 @@
 			<Setter Property="FontSize" Value="128"/>
 			<Setter Property="Foreground" Value="#2B2B2B"/>
 			<Setter Property="FontFamily" Value="./#Bree Serif"/>
-			<Setter Property="HorizontalAlignment" Value="Center"/>
-			<Setter Property="VerticalAlignment" Value="Center"/>
+		</Style>
+		<Style x:Key="PreviewCardStyle" TargetType="{x:Type Border}">
+			<Setter Property="Background" Value="#FF6666"/>
+			<Setter Property="Width" Value="100"/>
+			<Setter Property="Height" Value="100"/>
+			<Setter Property="CornerRadius" Value="12"/>
+			<Setter Property="BorderBrush" Value="#2B2B2B"/>
+			<Setter Property="BorderThickness" Value="4"/>
 		</Style>
 	</Window.Resources>
 	<Viewbox>
 		<Grid Width="1920" Height="1080">
-		<!--Hoeveel kolommen er zijn-->
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-		<Grid Margin="0 50 0 150" Grid.Column="0">
-			<!--Hoeveel ruimte elke kolom krijgt-->
-			<Grid.RowDefinitions>
-				<RowDefinition Height="2*"/>
-				<RowDefinition Height="1*"/>
-				<RowDefinition Height="1*"/>
-				<RowDefinition Height="1*"/>
-			</Grid.RowDefinitions>
-			<TextBlock Style="{DynamicResource TextBlockStyle}" Grid.Row="0">Memory</TextBlock>
-			<!--Knopjes-->
-			<Button Style="{DynamicResource RoundedButtonStyle}" Name="FourFourButton" Grid.Row="1" Content="4 x 4" Tag="4 4" Click="PreviewButtonClick"/>
-			<Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="2" Content="5 x 4" Tag="5 4" Click="PreviewButtonClick"/>
-			<Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="3" Content="6 x 5" Tag="6 5" Click="PreviewButtonClick"/>
+			<Border Background="#888888" BorderBrush="#2B2B2B" BorderThickness="8,0,0,0" Margin="956,0,0,0"/>
+			<TextBlock Style="{DynamicResource TextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,78,0,0">Memory</TextBlock>
+			<Button Style="{DynamicResource RoundedButtonStyle}" Name="button1" IsEnabled="False" Content="4 x 4" Click="PreviewButton1Click" Margin="230,382,1190,573"/>
+			<Button Style="{DynamicResource RoundedButtonStyle}" Name="button2" Content="5 x 4" Click="PreviewButton2Click" Margin="230,555,1190,400"/>
+			<Button Style="{DynamicResource RoundedButtonStyle}" Name="button3" Content="6 x 5" Click="PreviewButton3Click" Margin="230,730,1190,225"/>
+			<TextBlock Style="{DynamicResource TextBlockStyle}" Name="previewSize" FontSize="96" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1344,50,0,0">4 x 4</TextBlock>
+			<Button Style="{DynamicResource RoundedButtonStyle}" Content="Verder" Click="NextButtonClick" Margin="1190,905,230,50"/>
+			<Grid x:Name="grid1" Visibility="Visible" Margin="-10,0,10,0">
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,287,616,693"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,287,492,693"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,287,368,693"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,287,244,693"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,411,616,569"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,411,492,569"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,411,368,569"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,411,244,569"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,535,616,445"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,535,492,445"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,535,368,445"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,535,244,445"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,659,616,321"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,659,492,321"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,659,368,321"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,659,244,321"/>
+			</Grid>
+			<Grid x:Name="grid2" Visibility="Hidden">
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1142,287,678,693"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1266,287,554,693"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1390,287,430,693"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1514,287,306,693"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1638,287,182,693"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1142,411,678,569"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1266,411,554,569"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1390,411,430,569"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1514,411,306,569"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1638,411,182,569"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1142,535,678,445"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1266,535,554,445"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1390,535,430,445"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1514,535,306,445"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1638,535,182,445"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1142,659,678,321"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1266,659,554,321"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1390,659,430,321"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1514,659,306,321"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1638,659,182,321"/>
+			</Grid>
+			<Grid x:Name="grid3" Visibility="Hidden">
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1080,225,740,755"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,225,616,755"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,225,492,755"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,225,368,755"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,225,244,755"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1700,225,120,755"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1080,349,740,631"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,349,616,631"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,349,492,631"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,349,368,631"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,349,244,631"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1700,349,120,631"/>
+
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1080,473,740,507"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,473,616,507"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,473,492,507"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,473,368,507"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,473,244,507"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1700,473,120,507"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1080,597,740,383"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,597,616,383"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,597,492,383"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,597,368,383"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,597,244,383"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1700,597,120,383"/>
+
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1080,721,740,259"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1204,721,616,259"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1328,721,492,259"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1452,721,368,259"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1576,721,244,259"/>
+				<Border Style="{DynamicResource PreviewCardStyle}" Margin="1700,721,120,259"/>
+			</Grid>
 		</Grid>
-		<Border Background="#888888" Margin="-4 0 0 0" BorderBrush="#2B2B2B" BorderThickness="8 0 0 0" Grid.Column="1"/>
-		<Grid Name="previewRow" Grid.Column="1">
-			<!--Hoeveel ruimte elke rij krijgt-->
-			<Grid.RowDefinitions>
-				<RowDefinition Height="1*"/>
-				<RowDefinition Height="4*"/>
-				<RowDefinition Height="1*"/>
-			</Grid.RowDefinitions>
-			<TextBlock Style="{DynamicResource TextBlockStyle}" Name="previewSize" FontSize="96" Grid.Row="0">4 x 4</TextBlock>
-			<Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="2" Content="Verder" Click="NextButtonClick"/>
-			<!--Preview Grid-->
-			<Grid/>
-		</Grid>
-	</Grid>
 	</Viewbox>
 </Window>

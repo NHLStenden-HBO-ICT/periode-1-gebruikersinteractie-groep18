@@ -8,25 +8,211 @@
   <ItemGroup>
     <None Remove="BreeSerif.ttf" />
     <None Remove="Carrot Games Logo.png" />
-    <None Remove="geleKaart-removebg-preview.png" />
+    <None Remove="Dieren plaatjes\0.jpg" />
+    <None Remove="Dieren plaatjes\1.jpg" />
+    <None Remove="Dieren plaatjes\10.jpg" />
+    <None Remove="Dieren plaatjes\11.jpg" />
+    <None Remove="Dieren plaatjes\12.jpg" />
+    <None Remove="Dieren plaatjes\13.jpg" />
+    <None Remove="Dieren plaatjes\14.jpg" />
+    <None Remove="Dieren plaatjes\15.jpg" />
+    <None Remove="Dieren plaatjes\2.jpg" />
+    <None Remove="Dieren plaatjes\3.jpg" />
+    <None Remove="Dieren plaatjes\4.jpg" />
+    <None Remove="Dieren plaatjes\4.png" />
+    <None Remove="Dieren plaatjes\5.jpg" />
+    <None Remove="Dieren plaatjes\6.jpg" />
+    <None Remove="Dieren plaatjes\7.jpg" />
+    <None Remove="Dieren plaatjes\8.jpg" />
+    <None Remove="Dieren plaatjes\9.jpg" />
     <None Remove="Geluid aan geen achtergrond.png" />
-    <None Remove="rodeKaart-removebg-preview.png" />
+    <None Remove="Geluid uit geen achtergrond.png" />
+    <None Remove="Knuffles Plaatjes\1.jpg" />
+    <None Remove="Knuffles Plaatjes\10.jpg" />
+    <None Remove="Knuffles Plaatjes\11.jpg" />
+    <None Remove="Knuffles Plaatjes\12.jpg" />
+    <None Remove="Knuffles Plaatjes\13.jpg" />
+    <None Remove="Knuffles Plaatjes\14.jpg" />
+    <None Remove="Knuffles Plaatjes\15.jpg" />
+    <None Remove="Knuffles Plaatjes\2.jpg" />
+    <None Remove="Knuffles Plaatjes\3.jpg" />
+    <None Remove="Knuffles Plaatjes\4.jpg" />
+    <None Remove="Knuffles Plaatjes\5.jpg" />
+    <None Remove="Knuffles Plaatjes\6.jpg" />
+    <None Remove="Knuffles Plaatjes\7.jpg" />
+    <None Remove="Knuffles Plaatjes\8.jpg" />
+    <None Remove="Knuffles Plaatjes\9.jpg" />
+    <None Remove="Landen plaatjes\1.png" />
+    <None Remove="Landen plaatjes\10.png" />
+    <None Remove="Landen plaatjes\11.png" />
+    <None Remove="Landen plaatjes\12.png" />
+    <None Remove="Landen plaatjes\13.png" />
+    <None Remove="Landen plaatjes\14.png" />
+    <None Remove="Landen plaatjes\15.png" />
+    <None Remove="Landen plaatjes\2.png" />
+    <None Remove="Landen plaatjes\3.png" />
+    <None Remove="Landen plaatjes\4.png" />
+    <None Remove="Landen plaatjes\5.png" />
+    <None Remove="Landen plaatjes\6.png" />
+    <None Remove="Landen plaatjes\7.png" />
+    <None Remove="Landen plaatjes\8.png" />
+    <None Remove="Landen plaatjes\9.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="BreeSerif.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Dieren plaatjes\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\11.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\12.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\13.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\14.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dieren plaatjes\9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Geluid uit geen achtergrond.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\11.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\12.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\13.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\14.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\15.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Knuffles Plaatjes\9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Landen plaatjes\9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Carrot Games Logo.png" />
-    <Content Include="geleKaart-removebg-preview.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Dieren plaatjes\0.jpg" />
+    <Resource Include="Dieren plaatjes\1.jpg" />
+    <Resource Include="Dieren plaatjes\10.jpg" />
+    <Resource Include="Dieren plaatjes\11.jpg" />
+    <Resource Include="Dieren plaatjes\12.jpg" />
+    <Resource Include="Dieren plaatjes\13.jpg" />
+    <Resource Include="Dieren plaatjes\14.jpg" />
+    <Resource Include="Dieren plaatjes\2.jpg" />
+    <Resource Include="Dieren plaatjes\3.jpg" />
+    <Resource Include="Dieren plaatjes\4.jpg" />
+    <Resource Include="Dieren plaatjes\5.jpg" />
+    <Resource Include="Dieren plaatjes\6.jpg" />
+    <Resource Include="Dieren plaatjes\7.jpg" />
+    <Resource Include="Dieren plaatjes\8.jpg" />
+    <Resource Include="Dieren plaatjes\9.jpg" />
     <Resource Include="Geluid aan geen achtergrond.png" />
-    <Content Include="rodeKaart-removebg-preview.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dieren plaatjes\" />
     <Folder Include="Landen plaatjes\" />
     <Folder Include="Knuffles Plaatjes\" />
   </ItemGroup>
