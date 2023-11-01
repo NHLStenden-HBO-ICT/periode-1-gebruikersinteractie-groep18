@@ -19,13 +19,15 @@ namespace MemoryGame
     /// </summary>
     public partial class naamInvoerenScherm : Window
     {
+       
         public naamInvoerenScherm()
         {
             InitializeComponent();
             
             
         }
-
+        public static string speler1 = "";
+        public static string speler2 = "";
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             
@@ -35,13 +37,13 @@ namespace MemoryGame
         {
             
         }
-        private void Button_ClickSpeler1(object sender, RoutedEventArgs e)
+        public void Button_ClickSpeler1(object sender, RoutedEventArgs e)
         {
             string speler1 = invoerSpeler1.Text;
             weergevenSpeler1.Text = invoerSpeler1.Text;
         }
 
-        private void Button_ClickSpeler2(object sender, RoutedEventArgs e)
+        public void Button_ClickSpeler2(object sender, RoutedEventArgs e)
         {
             string speler2 = invoerSpeler2.Text;
             weergevenSpeler2.Text = invoerSpeler2.Text;
