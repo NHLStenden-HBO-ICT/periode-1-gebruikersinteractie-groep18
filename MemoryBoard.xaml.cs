@@ -39,10 +39,22 @@ namespace MemoryGame {
         private static Grid parent;
         private static string ImgFolder;
 
+        public static bool PlayerOneTurn = true;
+        public static List<int[]> cardsturned = new List<int[]>();
+        public static List<Button> buttonspressed = new List<Button>();
+
+        public static int score1;
+        public static int score2;
+
         public static bool generate(int w, int h, string folder) {
             width = w;
             height = h;
             ImgFolder = folder;
+
+            score1 = 0;
+            score2 = 0;
+            PlayerOneTurn = true;
+
             int cardnum = width * height;
             if(cardnum % 2 == 0) { 
                 //hoeveelheid kaarten is een even getal
@@ -123,9 +135,48 @@ namespace MemoryGame {
             int column = Grid.GetColumn(tempbutton);
             int row = Grid.GetRow(tempbutton);
             tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".jpg")));
-                
+            cardsturned.Add(new int[2] { row, column});
+            buttonspressed.Add(tempbutton);
+            if(cardsturned.Count() >= 2) {
+                //player turned 2 cards
+                Task.Delay(2000).ContinueWith(_ =>
+                {
+                    EndTurn();
+                }
+);
+               
+            }
 		}
+        private static void EndTurn() {
+            int row1 = cardsturned[0][0];
+            int column1 = cardsturned[0][1];
+            int row2 = cardsturned[1][0];
+            int column2 = cardsturned[1][1];
+            Trace.WriteLine("1: " + cards[row1][column1]);
+            Trace.WriteLine("2: " + cards[row2][column2]);
+            if(cards[row1][column1] == cards[row2][column2]) {
+                //cards are the same
 
+                if(PlayerOneTurn) {
+                    score1++;
+                }
+                else {
+                    score2++;
+                }
+                cardGrid.Children.Remove(buttonspressed[0]);
+                cardGrid.Children.Remove(buttonspressed[1]);
+                Trace.WriteLine("removed buttons");
+            }
+            else {
+                buttonspressed[0].Background = new SolidColorBrush(Color.FromRgb(255, 102, 102));
+                buttonspressed[1].Background = new SolidColorBrush(Color.FromRgb(255, 102, 102));
+                PlayerOneTurn = !PlayerOneTurn;
+            }
+            buttonspressed.RemoveAt(1);
+            buttonspressed.RemoveAt(0);
+            cardsturned.RemoveAt(1);
+            cardsturned.RemoveAt(0);
+        }
 
         private void Geluid_aan_Click(object sender, RoutedEventArgs e)
         {
