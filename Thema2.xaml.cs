@@ -31,10 +31,10 @@ namespace MemoryGame
             MemoryBoard memboard = new MemoryBoard();
             if (previewSize.Text == "knuffels") {
                 //edge case ivm spelfout in folder naam
-                MemoryBoard.generate(5, 4, "knuffles plaatjes");
+                memboard.generate(5, 4, "knuffles plaatjes");
             }
             else {
-                MemoryBoard.generate(5, 4, previewSize.Text + " plaatjes");
+                memboard.generate(5, 4, previewSize.Text + " plaatjes");
             }
             memboard.Show();
             this.Close();

@@ -15,8 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-
-
+using System.Runtime.CompilerServices;
 
 namespace MemoryGame {
     /// <summary>
@@ -51,7 +50,7 @@ namespace MemoryGame {
 
         public static bool blockinput = false;
 
-        public static bool generate(int w, int h, string folder) {
+        public bool generate(int w, int h, string folder) {
             width = w;
             height = h;
             ImgFolder = folder;
@@ -137,7 +136,7 @@ namespace MemoryGame {
 
             return true;
         }
-        private static void ClickCard(object sender, RoutedEventArgs e) {
+        private void ClickCard(object sender, RoutedEventArgs e) {
             if(!blockinput) {
                 Button tempbutton = (Button)sender;
                 int column = Grid.GetColumn(tempbutton);
@@ -162,7 +161,7 @@ namespace MemoryGame {
             }
             
 		}
-        private static void EndTurn() {
+        private void EndTurn() {
             int row1 = cardsturned[0][0];
             int column1 = cardsturned[0][1];
             int row2 = cardsturned[1][0];
@@ -178,8 +177,8 @@ namespace MemoryGame {
                 else {
                     score2++;
                 }
-                cardGrid.Children.Remove(buttonspressed[0]);
-                cardGrid.Children.Remove(buttonspressed[1]);
+                buttonspressed[0].Visibility = Visibility.Hidden;
+                buttonspressed[1].Visibility = Visibility.Hidden;
                 Trace.WriteLine("removed buttons");
                 RemainingCards -= 2;
                 if(RemainingCards <= 0) {
@@ -187,7 +186,9 @@ namespace MemoryGame {
                     Trace.WriteLine("game ended");
                     Trace.WriteLine("player 1: " + score1);
                     Trace.WriteLine("player 2: " + score2);
-                    //TODO: go to end screen
+                    eindScherm eindscherm = new eindScherm();
+                    eindscherm.Show();
+                    this.Close();
                 }
             }
             else {

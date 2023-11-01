@@ -22,6 +22,10 @@ namespace MemoryGame
         public eindScherm()
         {
             InitializeComponent();
+            score1Label.Content = MemoryBoard.score1.ToString();
+            score2Label.Content = MemoryBoard.score2.ToString();
+            speler1Label.Content = naamInvoerenScherm.speler1;
+            speler2Label.Content = naamInvoerenScherm.speler2;
         }
 
         private void Button_ClickNieuwSpel(object sender, RoutedEventArgs e)
