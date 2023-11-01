@@ -119,7 +119,7 @@ namespace MemoryGame {
         private void Geluid_aan_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer musicPlayer = new SoundPlayer();
-            musicPlayer.SoundLocation = "BangersShort.wav";
+            musicPlayer.SoundLocation = "BangerShort.wav";
             musicPlayer.PlayLooping();
 
             Geluid_uit.Visibility = Visibility.Visible;
@@ -130,7 +130,7 @@ namespace MemoryGame {
         private void Geluid_uit_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer musicPlayer = new SoundPlayer();
-            musicPlayer.SoundLocation = "BangersShort.wav";
+            musicPlayer.SoundLocation = "BangerShort.wav";
             musicPlayer.Stop();
 
             Geluid_uit.Visibility = Visibility.Collapsed;
