@@ -129,7 +129,7 @@
         <Button x:Name="Geluid_uit" HorizontalAlignment="Left" Margin="1410,20,0,0" VerticalAlignment="Top" Width="100" Height="100" BorderBrush="#FF2B2B2B" BorderThickness="4" Grid.Column="1" Foreground="White" Background="#FFFF6666" Style="{DynamicResource Geluid}" Click="Geluid_uit_Click">
             <Button.Content>
                 <StackPanel>
-                    <Image Name="image1"  Source="C:\Users\RedNo\Documents\GitHub\periode-1-gebruikersinteractie-groep18\Geluid aan geen achtergrond.png" Stretch="Fill" >
+                    <Image Name="image1"  Source="/Geluid aan geen achtergrond.png" Stretch="Fill" >
                         <Image.Style>
                             <Style TargetType="Image">
                                 <Setter Property="Visibility" Value="Visible" />
@@ -141,7 +141,7 @@
                             </Style>
                         </Image.Style>
                     </Image>
-                    <Image Name="image2" Source="C:\Users\RedNo\Documents\GitHub\periode-1-gebruikersinteractie-groep18\Geluid aan geen achtergrond.png" Stretch="Fill" >
+                    <Image Name="image2" Source="/Geluid uit geen achtergrond.png" Stretch="Fill" >
                         <Image.Style>
                             <Style TargetType="Image">
                                 <Setter Property="Visibility" Value="Collapsed" />
