@@ -139,10 +139,8 @@ namespace MemoryGame {
             buttonspressed.Add(tempbutton);
             if(cardsturned.Count() >= 2) {
                 //player turned 2 cards
-                Task.Delay(2000).ContinueWith(_ =>
-                {
-                    EndTurn();
-                }
+                //TODO: wait a bit before ending turn
+                EndTurn();
 );
                
             }
