@@ -28,7 +28,7 @@ namespace MemoryGame
         {
             // Code om naar het volgende venster te gaan
             MemoryBoard memboard = new MemoryBoard();
-            if (previewSize.Text == "knuffels") {
+            if (previewSize.Text == "Knuffels") {
                 //edge case ivm spelfout in folder naam
                 memboard.generate(6, 5, "knuffles plaatjes");
             }
