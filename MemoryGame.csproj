@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="BangersShort.wav" />
     <None Remove="BreeSerif.ttf" />
     <None Remove="Carrot Games Logo.png" />
     <None Remove="Dieren plaatjes\0.jpg" />
@@ -59,6 +60,9 @@
     <None Remove="Landen plaatjes\9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BangersShort.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="BreeSerif.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

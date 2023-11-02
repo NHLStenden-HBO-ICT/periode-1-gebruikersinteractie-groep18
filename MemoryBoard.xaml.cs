@@ -26,15 +26,18 @@ namespace MemoryGame {
             Trace.WriteLine("initializing memoryboard");
             InitializeComponent();
             parent = parentGrid;
-            //verwijder de lijn hieronder als alle knoppen werken
-            //generate(6, 5, "Dieren Plaatjes");
-        }
+			//verwijder de lijn hieronder als alle knoppen werken
+			//generate(6, 5, "Dieren Plaatjes");
+			mediaPlayer.Open(new("pack://siteoforigin:,,,/BangersShort.wav"));
 
-        public static int width;
+		}
+
+		public static int width;
         public static int height;
+		MediaPlayer mediaPlayer = new MediaPlayer();
 
 
-        public static List<List<int>> cards = new List<List<int>>();
+		public static List<List<int>> cards = new List<List<int>>();
 
         public static Grid cardGrid;
         private static Grid parent;
@@ -233,22 +236,18 @@ namespace MemoryGame {
 
         private void Geluid_aan_Click(object sender, RoutedEventArgs e)
         {
-            SoundPlayer musicPlayer = new SoundPlayer();
-            musicPlayer.SoundLocation = "BangersShort.wav";
-            musicPlayer.PlayLooping();
+			mediaPlayer.Play();
 
-            Geluid_uit.Visibility = Visibility.Visible;
-            Geluid_aan.Visibility = Visibility.Collapsed;
+			Geluid_uit.Visibility = Visibility.Visible;
+            Geluid_aan.Visibility = Visibility.Hidden;
 
         }
 
         private void Geluid_uit_Click(object sender, RoutedEventArgs e)
         {
-            SoundPlayer musicPlayer = new SoundPlayer();
-            musicPlayer.SoundLocation = "BangersShort.wav";
-            musicPlayer.Stop();
+            mediaPlayer.Stop();
 
-            Geluid_uit.Visibility = Visibility.Collapsed;
+            Geluid_uit.Visibility = Visibility.Hidden;
             Geluid_aan.Visibility = Visibility.Visible;
         }
     }
