@@ -31,7 +31,7 @@
 		<SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
 		<Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
 			<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-			<Setter Property="Background" Value="#FF6666"/>
+            <Setter Property="Background" Value="#FFFF6666"/>
 			<Setter Property="BorderBrush" Value="#2B2B2B"/>
 			<Setter Property="Foreground" Value="#2B2B2B"/>
 			<Setter Property="BorderThickness" Value="4"/>
@@ -58,7 +58,7 @@
 								<Setter Property="BorderBrush" TargetName="border" Value="#2B2B2B"/>
 							</Trigger>
 							<Trigger Property="IsPressed" Value="true">
-								<Setter Property="Background" TargetName="border" Value="#FFC4E5F6"/>
+								<Setter Property="Background" TargetName="border" Value="#FFBC37"/>
 								<Setter Property="BorderBrush" TargetName="border" Value="#FF3C7FB1"/>
 							</Trigger>
 							<Trigger Property="IsEnabled" Value="false">
@@ -183,7 +183,7 @@
 		<SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF838383"/>
 		<Style x:Key="MemoryCardStylep1" TargetType="{x:Type Button}">
 			<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual2}"/>
-			<Setter Property="Background" Value="#FFFF6666"/>
+            <Setter Property="Background" Value="#FFFF3477"/>
 			<Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border2}"/>
 			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
 			<Setter Property="BorderThickness" Value="1"/>
@@ -238,11 +238,11 @@
 								<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
 							</Trigger>
 							<Trigger Property="IsMouseOver" Value="true">
-								<Setter Property="Background" TargetName="border" Value="#FFFF6666"/>
+                                <Setter Property="Background" TargetName="border" Value="#FFFF3477"/>
 								<Setter Property="BorderBrush" TargetName="border" Value="#2b2b2b"/>
 							</Trigger>
 							<Trigger Property="IsPressed" Value="true">
-								<Setter Property="Background" TargetName="border" Value="#FFFF6666"/>
+                                <Setter Property="Background" TargetName="border" Value="#FFFF3477"/>
 								<Setter Property="BorderBrush" TargetName="border" Value="#2b2b2b"/>
 							</Trigger>
 							<Trigger Property="IsEnabled" Value="false">
