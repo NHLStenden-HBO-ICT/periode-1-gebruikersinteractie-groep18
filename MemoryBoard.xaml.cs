@@ -56,7 +56,7 @@ namespace MemoryGame {
 			Close();
 		}
 
-		public bool generate(int w, int h, string folder) {
+        public bool generate(int w, int h, string folder) {
             width = w;
             height = h;
             ImgFolder = folder;
@@ -68,10 +68,10 @@ namespace MemoryGame {
             int cardnum = width * height;
             RemainingCards = cardnum;
 
-            if (cardnum % 2 == 0) { 
+            if (cardnum % 2 == 0) {
                 //hoeveelheid kaarten is een even getal
                 List<int> sortedcards = new List<int>();
-                for(int i = 0; i < cardnum / 2; i++) {
+                for (int i = 0; i < cardnum / 2; i++) {
                     //voeg de kaarten toe aan de unsorted list
                     sortedcards.Add(i);
                     sortedcards.Add(i);
@@ -81,7 +81,7 @@ namespace MemoryGame {
                 for (int i = 0; i < height; i++) {
                     //genereer een tijdelijke lijst om toe te kunnen voegen aan de cards lijst
                     List<int> templist = new List<int>();
-                    for(int j = 0; j < width; j++) {
+                    for (int j = 0; j < width; j++) {
                         //genereer een willekeurig nummer
                         int rand = rnd.Next(0, sortedcards.Count());
                         //voeg de id uit de lijst toe aan de tijdelijke lijst en verwijder heb uit de gesorteerde lijst
@@ -93,7 +93,7 @@ namespace MemoryGame {
                     Trace.Write("\n");
                     cards.Add(templist);
                 }
-                
+
             }
             else {
                 Trace.WriteLine("de ingevoegde grootte levert een oneven aantal kaarten.");
@@ -106,32 +106,32 @@ namespace MemoryGame {
             cardGrid.VerticalAlignment = VerticalAlignment.Center;
 
             //voeg columns toe
-            for(int i = 0; i < width; i++) {
+            for (int i = 0; i < width; i++) {
                 ColumnDefinition tempcol = new ColumnDefinition();
                 cardGrid.ColumnDefinitions.Add(tempcol);
             }
             //voeg rows toe
-            for(int i = 0; i < height; i++) {
+            for (int i = 0; i < height; i++) {
                 RowDefinition temprow = new RowDefinition();
                 cardGrid.RowDefinitions.Add(temprow);
             }
 
-            for(int i = 0; i < height; i++) {
-                for(int j = 0; j < width; j++) {
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
                     Button tempbutton = new() {
                         Background = new SolidColorBrush(Color.FromRgb(255, 102, 102)),
                         BorderBrush = new SolidColorBrush(Color.FromRgb(43, 43, 43)),
                         BorderThickness = new Thickness(4),
-                        
-					    // De ruimte tussen kaarten
-					    Margin = new Thickness(5),
+
+                        // De ruimte tussen kaarten
+                        Margin = new Thickness(5),
                         Height = 100,
                         Width = 100,
                     };
                     tempbutton.SetResourceReference(Control.StyleProperty, "MemoryCardStylep1");
                     tempbutton.Click += new RoutedEventHandler(ClickCard);
-					//zet de row on column
-					Grid.SetColumn(tempbutton, j);
+                    //zet de row on column
+                    Grid.SetColumn(tempbutton, j);
                     Grid.SetRow(tempbutton, i);
                     //voeg hem toe aan de card grid
                     cardGrid.Children.Add(tempbutton);
@@ -144,33 +144,36 @@ namespace MemoryGame {
         }
         private void ClickCard(object sender, RoutedEventArgs e) {
             if(!blockinput) {
-                Button tempbutton = (Button)sender;
-                int column = Grid.GetColumn(tempbutton);
-                int row = Grid.GetRow(tempbutton);
-                if(ImgFolder == "Landen plaatjes") {
-                    //stomme edge case die minder moeite is dan alles converten naar jpg
-                    tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".png")));
-                }
-                else {
-                    tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".jpg")));
-                }
+                    if (buttonspressed.Count() == 0 || buttonspressed[0] != (Button)sender) {
+						Button tempbutton = (Button)sender;
+						int column = Grid.GetColumn(tempbutton);
+						int row = Grid.GetRow(tempbutton);
+						if (ImgFolder == "Landen plaatjes") {
+							//stomme edge case die minder moeite is dan alles converten naar jpg
+							tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".png")));
+						}
+						else {
+							tempbutton.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/" + ImgFolder + "/" + cards[row][column] + ".jpg")));
+						}
+
+						tempbutton.Focusable = false;
+						cardsturned.Add(new int[2] { row, column });
+						buttonspressed.Add(tempbutton);
+						if (cardsturned.Count() >= 2) {
+							//player turned 2 cards
+							//TODO: wait a bit before ending turn
+							var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
+							blockinput = true;
+							timer.Start();
+							timer.Tick += (sender, args) =>
+							{
+								timer.Stop();
+								blockinput = false;
+								EndTurn();
+							};
+						}
+					}
                
-                tempbutton.Focusable = false;
-                cardsturned.Add(new int[2] { row, column });
-                buttonspressed.Add(tempbutton);
-                if (cardsturned.Count() >= 2) {
-                    //player turned 2 cards
-                    //TODO: wait a bit before ending turn
-                    var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
-                    blockinput = true;
-                    timer.Start();
-                    timer.Tick += (sender, args) =>
-                    {
-                        timer.Stop();
-                        blockinput = false;
-                        EndTurn();
-                    };
-                }
             }
             
 		}
@@ -210,7 +213,8 @@ namespace MemoryGame {
                     Button tempbtn = (Button)item;
                     if (PlayerOneTurn) {
                         tempbtn.SetResourceReference(Control.StyleProperty, "MemoryCardStylep1");
-                        tempbtn.Background = new SolidColorBrush(Color.FromRgb(255, 102, 102));
+						//FFFF3477
+						tempbtn.Background = new SolidColorBrush(Color.FromRgb(255, 52, 119));
                     }
                     else {
                         tempbtn.SetResourceReference(Control.StyleProperty, "MemoryCardStylep2");
